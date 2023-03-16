@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+iframe{
+  width: 1000px;
+  height: 85vh;
+  margin-left: 20%;
+}
+/* .react-pdf__Page__textContent{
+  display: none;
+} */
