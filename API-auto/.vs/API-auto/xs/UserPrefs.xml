@@ -1,4 +1,26 @@
 ﻿<Properties StartupConfiguration="{7F7A0806-18F0-464B-90A4-B87B935AD46A}|https">
-  <MonoDevelop.Ide.ItemProperties.API-auto FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="API-auto/Controllers/WeatherForecastController.cs">
+    <Files>
+      <File FileName="API-auto/Program.cs" Line="27" Column="1" />
+      <File FileName="API-auto/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="API-auto" expanded="True">
+            <Node name="API-auto" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.API-auto PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
