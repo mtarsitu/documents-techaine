@@ -1,26 +1,15 @@
 ﻿<Properties StartupConfiguration="{7F7A0806-18F0-464B-90A4-B87B935AD46A}|https">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/m.t./Documents/documents-techaine/API-auto/API-auto/services/IdReaderService.cs" relfile="API-auto/services/IdReaderService.cs" line="32" column="1" />
-      <Breakpoint file="/Users/m.t./Documents/documents-techaine/API-auto/API-auto/mappers/IdMapper.cs" relfile="API-auto/mappers/IdMapper.cs" line="28" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.API-auto PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="API-auto/services/IdReaderService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="API-auto/Properties/launchSettings.json">
     <Files>
-      <File FileName="API-auto/Program.cs" Line="23" Column="1" />
-      <File FileName="API-auto/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
-      <File FileName="API-auto/Controllers/DocumentsController.cs" Line="23" Column="41" />
-      <File FileName="API-auto/services/IdReaderService.cs" Line="24" Column="34" />
-      <File FileName="API-auto/appsettings.json" Line="1" Column="1" />
+      <File FileName="API-auto/Program.cs" />
+      <File FileName="API-auto/Controllers/WeatherForecastController.cs" />
+      <File FileName="API-auto/Controllers/DocumentsController.cs" />
+      <File FileName="API-auto/services/IdReaderService.cs" Line="30" Column="1" />
+      <File FileName="API-auto/appsettings.json" />
       <File FileName="API-auto/Properties/launchSettings.json" Line="34" Column="29" />
       <File FileName="API-auto/mappers/IdMapper.cs" Line="28" Column="1" />
-      <File FileName="API-auto/model/Client.cs" Line="28" Column="1" />
-      <File FileName="API-auto/model/baseField/BlockUnit.cs" Line="10" Column="1" />
-      <File FileName="API-auto/model/baseField/BaseField.cs" Line="17" Column="1" />
+      <File FileName="API-auto/services/AutoIdReaderService.cs" Line="27" Column="2" />
+      <File FileName="API-auto/model/AutoId.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -42,4 +31,13 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.API-auto PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/m.t./Documents/documents-techaine/API-auto/API-auto/services/IdReaderService.cs" relfile="API-auto/services/IdReaderService.cs" line="30" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

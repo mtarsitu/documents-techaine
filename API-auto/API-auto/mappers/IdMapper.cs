@@ -6,9 +6,9 @@ namespace API_auto.mappers
 {
     public static class IdMapper
     {
-        public static Id GetClientData(AnalyzeResult result, ClientType clientType)
+        public static DocumentId GetClientData(AnalyzeResult result, ClientType clientType)
         {
-            Id client = new Id(clientType);
+            DocumentId client = new DocumentId();
             
             foreach(System.Collections.Generic.KeyValuePair<string, DocumentField> field in result.Documents[0].Fields)
             {
@@ -18,8 +18,8 @@ namespace API_auto.mappers
                 else if(field.Key == "citizen"){client.citizen.Value = field.Value.Content == null ? "-":field.Value.Content;}
                 else if(field.Key == "county"){client.county.Value = field.Value.Content == null ? "-":field.Value.Content;}
                 else if(field.Key == "afterCounty"){client.subCounty.Value = field.Value.Content == null ? "-":field.Value.Content;}
-                else if(field.Key == "firstName"){client.firstName =  field.Value.Content;}
-                else if(field.Key == "lastName"){client.lastName = field.Value.Content;}
+                // else if(field.Key == "firstName"){client.firstName =  field.Value.Content;}
+                // else if(field.Key == "lastName"){client.lastName = field.Value.Content;}
                 else if(field.Key == "street")
                 {
                     client.street.Value = field.Value.Content == null ? "-":field.Value.Content.Split("nr.")[0];

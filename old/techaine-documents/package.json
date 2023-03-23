@@ -1,0 +1,57 @@
+{
+  "name": "techaine-documents",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.13",
+    "@mui/styles": "^5.11.12",
+    "@react-pdf/renderer": "^3.1.7",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.3.4",
+    "js-sha1": "^0.6.0",
+    "markdown-to-jsx": "^7.2.0",
+    "material-ui-dropzone": "^3.5.0",
+    "pdf-lib": "^1.17.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-mui-dropzone": "^4.0.6",
+    "react-pdf": "^6.2.2",
+    "react-pdf-scroll": "^1.0.0",
+    "react-router-dom": "^6.9.0",
+    "react-scripts": "5.0.1",
+    "tailwindcss": "^3.2.7",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "i": "^0.3.7"
+  }
+}

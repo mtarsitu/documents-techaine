@@ -3,6 +3,9 @@ using API_auto.services;
 using Azure.AI.FormRecognizer.DocumentAnalysis;
 using API_auto.model;
 using API_auto.model.id;
+using API_auto.helpers;
+using API_auto.mappers;
+
 namespace API_auto.Controllers
 {
     [ApiController]
@@ -21,14 +24,37 @@ namespace API_auto.Controllers
 
 
         [HttpPost("getResult")]
-        public async Task<IEnumerable<Id>> GetResult([FromForm] IncomingImages file)
+        public async Task<IEnumerable<DocumentId>> GetResult([FromForm] IncomingImages file)
         {
             var sellerResult = await _service.GetOcrDocument(file.SellerId, ClientType.Seller);
             // var buyerResult = await _service.GetOcrDocument(file.BuyerId, ClientType.Buyer);
             // var autoResult = await _autoService.GetOcrAutoDocument(file.AutoId);
-            List<Id> idDates = new List<Id>{sellerResult};
+            List<DocumentId> idDates = new List<DocumentId>{sellerResult};
             
             return idDates;
+        }
+
+        [HttpPost("test")]
+        public OutDocuments GetTestResult([FromForm] IncomingImages file)
+        {
+            DocumentId seller = IdMock.GetSeller(file);
+            DocumentId buyer = IdMock.GetBuyer(file);
+            AutoId auto = IdMock.GetAuto(file); 
+           
+
+            OutDocuments outDocuments = new OutDocuments{
+                Seller = seller,
+                Buyer = buyer,
+                Auto = auto
+            };
+            return outDocuments;
+        }
+
+
+        [HttpGet("getPdf")]
+        public string GetPdf()
+        {
+            return PdfHelper.GetPdfBytes();
         }
     }
 }
