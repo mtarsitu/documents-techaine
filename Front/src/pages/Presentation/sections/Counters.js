@@ -1,18 +1,3 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -34,7 +19,7 @@ function Counters() {
               count={1}
               suffix=" min"
               title="Generare Contract"
-              description="De la buletine si cartea de identitate a masinii pana la un contract complet completat"
+              description="De la pozele buletinelor și a cartii de identitate a mașinii până la un contract complet completat, procesul nostru de completare automată a contractelor este rapid și simplu"
             />
           </Grid>
           <Grid item xs={12} md={3} display="flex">
@@ -43,7 +28,7 @@ function Counters() {
               count={100}
               suffix="%"
               title="Securizat"
-              description="Nu retinem nici o informatie de la clientii nostrii. Cu atat mai putin pozele care ne sunt furnizate"
+              description="La AutoContracte.ro, protejarea informațiilor clienților noștri este o prioritate absolută. Nu reținem nicio informație furnizată de clienții noștri, nici măcar fotografiile încărcate pentru a completa contractele."
             />
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />
           </Grid>
@@ -52,15 +37,15 @@ function Counters() {
               count={100}
               suffix="%"
               title="Model autentic"
-              description="Contractul pe care il vei primii de la noi este recunoscut atat de primarie cat si de DRPCIV"
+              description="Contractul de vânzare auto pe care îl veți primi de la AutoContracte.ro este un document recunoscut oficial atât de Primărie, cât și de Poliția Rutieră și Direcția Regim Permise de Conducere și Înmatriculare a Vehiculelor (DRPCIV)."
             />
           </Grid>
           <Grid item xs={12} md={3}>
             <DefaultCounterCard
               count={100}
               suffix="%"
-              title="Model autentic"
-              description="Contractul pe care il vei primii de la noi este recunoscut atat de primarie cat si de DRPCIV"
+              title="Confidentialitate"
+              description="Respectăm dreptul la confidențialitate al clienților noștri și asigurăm un mediu sigur și protejat pentru tranzacțiile lor. Puteți avea încredere că informațiile dvs. sunt în siguranță cu noi și că sunt utilizate numai în scopul de a completa contractul de vânzare auto."
             />
           </Grid>
         </Grid>

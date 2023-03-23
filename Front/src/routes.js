@@ -21,27 +21,31 @@ const routes = [
   // },
   {
     name: "despre noi",
-    icon: <Icon>dashboard</Icon>,
+    icon: <Icon>face2</Icon>,
     route: "/despre-noi",
     component: <AboutUs />,
   },
   {
     name: "Costuri",
+    icon: <Icon>payment</Icon>,
     route: "/pachete",
     component: <SecondPricing />,
   },
   {
     name: "contacteaza-ne",
+    icon: <Icon>phone</Icon>,
     route: "/contact",
     component: <ContactUs />,
   },
   {
     name: "blog",
+    icon: <Icon>newspaper</Icon>,
     route: "/blog",
     component: <Blogs />,
   },
   {
     name: "sign in",
+    icon: <Icon>lockperson</Icon>,
     route: "/sign-in",
     component: <SignIn />,
   },

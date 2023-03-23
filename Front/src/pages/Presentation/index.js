@@ -71,10 +71,10 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Serviciul nostru oferă scanarea documentelor pentru extragerea datelor necesare și
-              generarea unui contract de vânzare-cumpărare auto completat cu aceste informații. În
-              acest fel, puteți economisi timp și efort în procesul de vânzare sau cumpărare a unui
-              vehicul.
+              Bună ziua și bun venit pe autocontracte.ro, unde ne specializăm în completarea
+              automată a contractelor de vânzare auto. Acum puteți evita orele lungi petrecute
+              completând manual contracte, utilizând serviciul nostru ușor și rapid de completare
+              automată a contractelor.
             </MKTypography>
           </Grid>
         </Container>

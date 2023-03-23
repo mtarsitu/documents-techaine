@@ -59,6 +59,9 @@ function AboutUs() {
               Despre noi - Auto Generare Contracte
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
+              Bun venit pe AutoContracte.ro, compania de tehnologie ce oferă soluții avansate pentru
+              completarea automată a contractelor de vânzare auto și nu numai.
+              <br />
               Putem spune ca suntem o companie care cauta mereu solutii inovatoare pentru a livra
               functionalitati ce sunt folosite zi de zi
             </MKTypography>
