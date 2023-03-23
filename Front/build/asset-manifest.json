@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.js": "/static/js/main.fd3d8a2a.chunk.js",
+    "main.js.map": "/static/js/main.fd3d8a2a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5d1efca7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5d1efca7.js.map",
+    "static/js/2.c001c4bf.chunk.js": "/static/js/2.c001c4bf.chunk.js",
+    "static/js/2.c001c4bf.chunk.js.map": "/static/js/2.c001c4bf.chunk.js.map",
+    "index.html": "/index.html",
+    "static/js/2.c001c4bf.chunk.js.LICENSE.txt": "/static/js/2.c001c4bf.chunk.js.LICENSE.txt",
+    "static/media/bg-sign-in-basic.f327db1d.jpeg": "/static/media/bg-sign-in-basic.f327db1d.jpeg",
+    "static/media/blog-post.1.07c09ea3.md": "/static/media/blog-post.1.07c09ea3.md",
+    "static/media/blog-post.2.3388c05a.md": "/static/media/blog-post.2.3388c05a.md",
+    "static/media/blog-post.3.f93bf178.md": "/static/media/blog-post.3.f93bf178.md",
+    "static/media/contract-fata-vanzare.48047b3b.jpg": "/static/media/contract-fata-vanzare.48047b3b.jpg",
+    "static/media/contract.dde7f726.jpeg": "/static/media/contract.dde7f726.jpeg",
+    "static/media/despre-noi-poza.91d50a98.jpeg": "/static/media/despre-noi-poza.91d50a98.jpeg",
+    "static/media/familie-fericita-cumparare-auto.2c4ff85d.jpg": "/static/media/familie-fericita-cumparare-auto.2c4ff85d.jpg",
+    "static/media/generare-contract.1616fa05.jpeg": "/static/media/generare-contract.1616fa05.jpeg",
+    "static/media/illustration-reset.c5f36c0c.jpg": "/static/media/illustration-reset.c5f36c0c.jpg",
+    "static/media/parc-auto-blog.12803370.jpg": "/static/media/parc-auto-blog.12803370.jpg",
+    "static/media/samsarii-de-masini.4700c9bf.jpg": "/static/media/samsarii-de-masini.4700c9bf.jpg",
+    "static/media/vanzare-cumparare.2ed7ee52.jpg": "/static/media/vanzare-cumparare.2ed7ee52.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5d1efca7.js",
+    "static/js/2.c001c4bf.chunk.js",
+    "static/js/main.fd3d8a2a.chunk.js"
+  ]
+}
