@@ -5,15 +5,12 @@
   "author": "techaine",
   "description": "Auto Completare Contracte by Techaine",
   "homepage": "https://techaine.com",
-  "bugs": {
-    "url": "https://github.com/creativetimofficial/ct-material-kit-react/issues"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/creativetimofficial/ct-material-kit-react.git"
   },
   "engines": {
-    "node": "18",
+    "node": "16.x",
     "npm": ">=6"
   },
   "dependencies": {
