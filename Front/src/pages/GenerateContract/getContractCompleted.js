@@ -9,7 +9,7 @@ const year = date.getFullYear();
 const currentDate = `${day}/${month}/${year}`;
 
 export default async function GetContractCompleted(seller, buyer, auto) {
-  const response = await axios.get("http://localhost:5204/Documents/getPdf");
+  const response = await axios.get("https://autocontract.azurewebsites.net/Documents/getPdf");
   const document = Base64ToArrayBuffer(response.data);
   const pdfDoc = await PDFDocument.load(document);
   const pages = pdfDoc.getPages();
