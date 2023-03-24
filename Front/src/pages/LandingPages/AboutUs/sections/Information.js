@@ -1,18 +1,3 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -35,8 +20,8 @@ function Information() {
                 <MKBox mb={5}>
                   <DefaultInfoCard
                     icon="public"
-                    title="Fully integrated"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Global"
+                    description="Nu conteaza unde te aflii, noi suntem aici pentru tine!"
                   />
                 </MKBox>
               </Grid>
@@ -44,8 +29,8 @@ function Information() {
                 <MKBox mb={5}>
                   <DefaultInfoCard
                     icon="payments"
-                    title="Payments functionality"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Costuri reduse"
+                    description="Auto completarea de contracte nu trebuie sa fie un serviciu scump!"
                   />
                 </MKBox>
               </Grid>
@@ -53,8 +38,8 @@ function Information() {
                 <MKBox mb={{ xs: 5, md: 0 }}>
                   <DefaultInfoCard
                     icon="apps"
-                    title="Prebuilt components"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Aplicatii"
+                    description="Pentru orice tip de aplicatie!"
                   />
                 </MKBox>
               </Grid>
@@ -62,8 +47,8 @@ function Information() {
                 <MKBox mb={{ xs: 5, md: 0 }}>
                   <DefaultInfoCard
                     icon="3p"
-                    title="Improved platform"
-                    description="We get insulted by others, lose trust for those We get back freezes"
+                    title="Protectia datelor"
+                    description="Nu trebuie sa iti faci griji pentru protectia datelor"
                   />
                 </MKBox>
               </Grid>

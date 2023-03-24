@@ -9,7 +9,7 @@ import MKButton from "components/MKButton";
 import MKInput from "components/MKInput";
 import MKTypography from "components/MKTypography";
 import bgImage from "assets/images/generare-contract.jpeg";
-import VerifyDocs from "./verifyData";
+import CompletedDoc from "./CompletedDoc";
 
 function UserInputs({ files, setStep, step }) {
   const [seller, setSeller] = useState({});
@@ -28,9 +28,7 @@ function UserInputs({ files, setStep, step }) {
   };
   const setForm = (e) => {
     e.preventDefault();
-    console.log("assa");
     const formData = new FormData(e.currentTarget);
-    console.log(formData.get("price"));
     formData.append("seller", files.sellerCard[0]);
     formData.append("buyer", files.buyerCard[0]);
     formData.append("auto", files.autoCard[0]);
@@ -71,11 +69,12 @@ function UserInputs({ files, setStep, step }) {
               Pasul 2
             </MKTypography>
             <MKTypography variant="h6" mb={4}>
-              *** Aceste date nu se pot gasii nicaieri in documentele pe care le procesam ***
+              Scanarea documentelor dureaza pana la 30 de secunde, pana atunci poti introduce pretul
+              de vanzare al masinii!
             </MKTypography>
             <MKBox width="100%" component="form" method="post" mt={10} onSubmit={setForm}>
               <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
+                {/* <Grid item xs={12} md={6}>
                   <MKInput
                     type="email"
                     variant="standard"
@@ -166,7 +165,7 @@ function UserInputs({ files, setStep, step }) {
                     InputLabelProps={{ shrink: true }}
                     fullWidth
                   />
-                </Grid>
+                </Grid> */}
                 <Grid container item justifyContent="center" xs={12} mt={2} mb={2}>
                   <MKBox width="80%">
                     <MKInput
@@ -190,7 +189,7 @@ function UserInputs({ files, setStep, step }) {
           </Card>
         </MKBox>
       ) : (
-        <VerifyDocs
+        <CompletedDoc
           seller={seller}
           buyer={buyer}
           auto={auto}

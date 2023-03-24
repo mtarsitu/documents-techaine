@@ -72,25 +72,25 @@ function Information() {
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="flip_to_front"
-                  title="Verifici datele"
-                  description="Verifici daca toate datele obtinute de noi prin technologia avansata numita OCR si noi generam contracul in mai putin de 10 secunde"
+                  icon="price_change"
+                  title="Achiti"
+                  description="Achiti taxa de numai 27.99 ron si in cateva secunde contractul este generat automat. Urmand sa alegi ce sa faci in continuare: editezi, email, printare sau descarcare?"
                 />
               </Grid>
             </Grid>
             <Grid container spacing={3} sx={{ mt: { xs: 0, md: 6 } }}>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="price_change"
-                  title="Achiti"
-                  description="Achiti taxa de numai 27.99 ron si in cateva secunde contractul este generat automat. Urmand sa alegi ce sa faci in continuare: email, printare sau descarcare?"
+                  icon="devices"
+                  title="Contractul completat"
+                  description="Ramane doar sa alegi ce vrei sa faci cu contractul tau de vanzare cumparare, il descarci,il printezi sau il trimiti pe email-ul tau cu doar o apasare de buton"
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="devices"
-                  title="Contractul de vanzare-cumparare"
-                  description="Ramane doar sa alegi ce vrei sa faci cu contractul tau, il descarci,il printezi sau il trimiti pe email-ul tau cu doar o apasare de buton"
+                  icon="flip_to_front"
+                  title="Verifici datele"
+                  description="Verifici daca toate datele obtinute de noi prin technologia avansata numita OCR si noi generam contracul in mai putin de 10 secunde"
                 />
               </Grid>
             </Grid>

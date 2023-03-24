@@ -10,7 +10,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 // Material Kit 2 React themes
 import theme from "assets/theme";
 import Presentation from "layouts/pages/presentation";
-import UploadDocuments from "pages/GenerateContract/uploadDocuments";
+import UploadDocuments from "pages/GenerateContract/UploadDocuments";
 import DefaultNavbar from "global/navbars/DefaultNavbar";
 import Footer from "global/Footer";
 // Material Kit 2 React routes

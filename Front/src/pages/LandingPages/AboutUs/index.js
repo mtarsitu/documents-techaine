@@ -10,8 +10,9 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 React examples
 
 // About Us page sections
+import About from "pages/LandingPages/AboutUs/sections/About";
 import Information from "pages/LandingPages/AboutUs/sections/Information";
-import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
+// import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
 
 // Routes
 
@@ -94,8 +95,9 @@ function AboutUs() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
+        <About />
         <Information />
-        <Featuring />
+        {/* <Featuring /> */}
       </Card>
     </>
   );
