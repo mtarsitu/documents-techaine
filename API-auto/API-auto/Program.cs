@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(cors => {
     cors.AddPolicy(name: MyAllowSpecificOrigins, policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "https://vidivici-frontend.azurewebsites.net/").AllowCredentials().AllowAnyHeader().AllowAnyMethod();
+        policy.WithOrigins("http://localhost:3000", "https://vidivici-frontend.azurewebsites.net/","http://localhost:3001").AllowCredentials().AllowAnyHeader().AllowAnyMethod();
     });
 
 
