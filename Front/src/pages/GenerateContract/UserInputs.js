@@ -17,7 +17,7 @@ function UserInputs({ files, setStep, step }) {
   const [auto, setAuto] = useState({});
   const upload = async (form) => {
     try {
-      const response = await axios.post("http://localhost:5204/Documents/test", form);
+      const response = await axios.post("https://autocontract.azurewebsites.net/Documents/test", form);
       setBuyer(response.data.buyer);
       setSeller(response.data.seller);
       setAuto(response.data.auto);
