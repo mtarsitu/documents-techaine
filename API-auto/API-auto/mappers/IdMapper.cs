@@ -33,12 +33,12 @@ namespace API_auto.mappers
                     client.city = field.Value.Content == null ? new City("-",clientType, 0.6f) : new City(TextHelper.GetCity(field.Value.Content),clientType, (float)field.Value.Confidence);
                     client.subCounty = field.Value.Content == null ? new SubCounty("-",clientType, 0.6f) :new SubCounty(TextHelper.GetSubCounty(field.Value.Content),clientType, (float)field.Value.Confidence);
                     ;}
-                else if(field.Key == "Street"){client.street = field.Value.Content == null ? new Street("-",clientType,0.6f): new Street(field.Value.Content,clientType,(float)field.Value.Confidence);}
+                else if(field.Key == "Street"){client.street = field.Value.Content == null ? new Street("-",clientType,0.6f): new Street(TextHelper.WithoutDiacritics(field.Value.Content),clientType,(float)field.Value.Confidence);}
                 else if(field.Key == "StreetNr"){client.streetNr= field.Value.Content == null ? new Streetnumber("-",clientType, 0.6f) : new Streetnumber(TextHelper.GetStreetNr(field.Value.Content),clientType,(float)field.Value.Confidence);}
-                else if(field.Key == "Block"){client.block = field.Value.Content == null ? new Block("-",clientType,0.8f):new Block(field.Value.Content,clientType,(float)field.Value.Confidence);}
-                else if(field.Key == "BlockUnit"){client.blockUnit = field.Value.Content == null ? new BlockUnit("-",clientType,0.8f): new BlockUnit(field.Value.Content,clientType,(float)field.Value.Confidence);}
-                else if(field.Key == "Floor"){client.floor = field.Value.Content == null ? new Floor("-",clientType,0.8f): new Floor(field.Value.Content,clientType,(float)field.Value.Confidence);}
-                else if(field.Key == "Apartament"){client.apartament= field.Value.Content == null ? new Apartament("-",clientType,0.8f): new Apartament(field.Value.Content,clientType,(float)field.Value.Confidence);}
+                else if(field.Key == "Block"){client.block = field.Value.Content == null ? new Block("-",clientType,0.8f):new Block(TextHelper.WithoutDiacritics(field.Value.Content),clientType,(float)field.Value.Confidence);}
+                else if(field.Key == "BlockUnit"){client.blockUnit = field.Value.Content == null ? new BlockUnit("-",clientType,0.8f): new BlockUnit(TextHelper.WithoutDiacritics(field.Value.Content),clientType,(float)field.Value.Confidence);}
+                else if(field.Key == "Floor"){client.floor = field.Value.Content == null ? new Floor("-",clientType,0.8f): new Floor(TextHelper.WithoutDiacritics(field.Value.Content),clientType,(float)field.Value.Confidence);}
+                else if(field.Key == "Apartament"){client.apartament= field.Value.Content == null ? new Apartament("-",clientType,0.8f): new Apartament(TextHelper.WithoutDiacritics(field.Value.Content),clientType,(float)field.Value.Confidence);}
             }
             client.postalCode = new PostalCode("-",clientType,0.6f);
             client.email = new Email("-",clientType,0.6f);

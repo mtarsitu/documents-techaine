@@ -33,10 +33,11 @@ export default async function GetContractCompleted(seller, buyer, auto) {
       firstPage.drawText(detail[1].value, {
         x: detail[1].xPosition,
         y: detail[1].yPosition,
-        size: 10,
+        size: detail[0] === "letterPrice" ? 6 : 10,
         font: d,
         color: rgb(0.95, 0.1, 0.1),
-      })
+      }) &&
+      console.log(detail)
   );
   Object.entries(buyer).map(
     (detail) =>
