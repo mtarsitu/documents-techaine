@@ -15,9 +15,13 @@ function UserInputs({ files, setStep, step }) {
   const [seller, setSeller] = useState({});
   const [buyer, setBuyer] = useState({});
   const [auto, setAuto] = useState({});
+  console.log(files);
   const upload = async (form) => {
     try {
-      const response = await axios.post("https://autocontract.azurewebsites.net/Documents/test", form);
+      const response = await axios.post(
+        "https://autocontract.azurewebsites.net/Documents/getResult",
+        form
+      );
       setBuyer(response.data.buyer);
       setSeller(response.data.seller);
       setAuto(response.data.auto);
@@ -29,9 +33,9 @@ function UserInputs({ files, setStep, step }) {
   const setForm = (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    formData.append("seller", files.sellerCard[0]);
-    formData.append("buyer", files.buyerCard[0]);
-    formData.append("auto", files.autoCard[0]);
+    formData.append("sellerId", files.sellerCard[0]);
+    formData.append("buyerId", files.buyerCard[0]);
+    formData.append("autoId", files.autoCard[0]);
     upload(formData);
   };
   return (
@@ -69,8 +73,7 @@ function UserInputs({ files, setStep, step }) {
               Pasul 2
             </MKTypography>
             <MKTypography variant="h6" mb={4}>
-              Scanarea documentelor dureaza pana la 30 de secunde, pana atunci poti introduce pretul
-              de vanzare al masinii!
+              Introdu pretul de vanzare al masinii ca sa il putem completa in contract!
             </MKTypography>
             <MKBox width="100%" component="form" method="post" mt={10} onSubmit={setForm}>
               <Grid container spacing={3}>

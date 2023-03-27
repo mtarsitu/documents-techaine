@@ -7,7 +7,7 @@ namespace API_auto.model.auto
 {
     public class ItpExpire : BaseField
     {
-        public ItpExpire(string value) : base(value)
+        public ItpExpire(string value, float confidence) : base(value,confidence)
         {
             XPosition = 480;
             YPosition = 408;

@@ -7,7 +7,7 @@ namespace API_auto.model.auto
 {
     public class Model : BaseField
     {
-        public Model(string value) : base(value)
+        public Model(string value, float confidence) : base(value,confidence)
         {
             XPosition = 298;
             YPosition = 431;

@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace API_auto.model.auto
 {
-    public class Price : BaseField
+    public class LetterPrice : BaseField
     {
-        public Price(string value, float confidence) : base(value,confidence)
+        public LetterPrice(string value, float confidence) : base(value, confidence)
         {
-            XPosition = 140;
+            XPosition = 280;
             YPosition = 368;
         }
     }

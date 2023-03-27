@@ -7,7 +7,7 @@ namespace API_auto.model.auto
 {
     public class BuyedAt : BaseField
     {
-        public BuyedAt(string value) : base(value)
+        public BuyedAt(string value, float confidence) : base(value,confidence)
         {
             XPosition = 55;
             YPosition = 385;

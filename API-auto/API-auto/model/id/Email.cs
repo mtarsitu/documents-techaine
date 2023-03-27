@@ -7,7 +7,7 @@ namespace API_auto.model.id
 {
     public class Email : BaseField
     {
-        public Email(string value, ClientType clientType) : base(value)
+        public Email(string value, ClientType clientType, float confidence) : base(value,confidence)
         {
             XPosition = clientType == ClientType.Seller ? 382 : 382;
             YPosition = clientType == ClientType.Seller ? 629.8 : 512.5;

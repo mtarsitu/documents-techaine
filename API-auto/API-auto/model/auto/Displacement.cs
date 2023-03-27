@@ -7,7 +7,7 @@ namespace API_auto.model.auto
 {
     public class Displacement : BaseField
     {
-        public Displacement(string value) : base(value)
+        public Displacement(string value, float confidence) : base(value,confidence)
         {
             XPosition = 254;
             YPosition = 419;

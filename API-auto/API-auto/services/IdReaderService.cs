@@ -23,9 +23,9 @@ namespace API_auto.services
         {
             
             var stream = ImageHelper.GetStreamPicture(image);
-            AnalyzeDocumentOperation operation = await client.AnalyzeDocumentAsync(WaitUntil.Completed,"techaine-v2-id",stream);
+            AnalyzeDocumentOperation operation = await client.AnalyzeDocumentAsync(WaitUntil.Completed,"id-techaine-v6",stream);
             AnalyzeResult result = operation.Value;
-            DocumentId buyer = IdMapper.GetClientData(result, ClientType.Buyer);
+            DocumentId buyer = IdMapper.GetClientData(result, clientType);
 
             return buyer;
         }

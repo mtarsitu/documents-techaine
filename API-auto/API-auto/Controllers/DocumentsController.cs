@@ -24,14 +24,19 @@ namespace API_auto.Controllers
 
 
         [HttpPost("getResult")]
-        public async Task<IEnumerable<DocumentId>> GetResult([FromForm] IncomingImages file)
+        public async Task<OutDocuments> GetResult([FromForm] IncomingImages file)
         {
             var sellerResult = await _service.GetOcrDocument(file.SellerId, ClientType.Seller);
-            // var buyerResult = await _service.GetOcrDocument(file.BuyerId, ClientType.Buyer);
-            // var autoResult = await _autoService.GetOcrAutoDocument(file.AutoId);
-            List<DocumentId> idDates = new List<DocumentId>{sellerResult};
-            
-            return idDates;
+            var buyerResult = await _service.GetOcrDocument(file.BuyerId, ClientType.Buyer);
+            var autoResult = await _autoService.GetOcrAutoDocument(file.AutoId,file.Price);
+            // List<DocumentId> idDates = new List<DocumentId>{sellerResult};
+            var outData = new OutDocuments
+            {
+                Seller = sellerResult,
+                Buyer = buyerResult,
+                Auto = autoResult
+            };
+            return outData;
         }
 
         [HttpPost("test")]

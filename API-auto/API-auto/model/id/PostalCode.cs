@@ -7,7 +7,7 @@ namespace API_auto.model.id
 {
     public class PostalCode : BaseField
     {
-        public PostalCode(string value,ClientType clientType) : base(value)
+        public PostalCode(string value,ClientType clientType, float confidence) : base(value,confidence)
         {
             XPosition = clientType == ClientType.Seller ? 420 : 420;
             YPosition = clientType == ClientType.Seller ? 663.5 : 546.5;

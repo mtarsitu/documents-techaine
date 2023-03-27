@@ -7,7 +7,7 @@ namespace API_auto.model.auto
 {
     public class Year : BaseField
     {
-        public Year(string value) : base(value)
+        public Year(string value, float confidence) : base(value,confidence)
         {
             XPosition = 360;
             YPosition = 397;

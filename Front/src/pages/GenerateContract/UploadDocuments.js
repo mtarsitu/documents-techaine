@@ -11,7 +11,7 @@ import idImage from "assets/images/exemplu-buletin.jpeg";
 import carIdImage from "assets/images/exemplu-carte-auto.jpeg";
 import UserInputs from "./UserInputs";
 
-function UploadDocuments () {
+const UploadDocuments = () => {
   const [files, setFiles] = useState({
     sellerCard: "",
     buyerCard: "",

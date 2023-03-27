@@ -7,7 +7,7 @@ namespace API_auto.model.auto
 {
     public class Euro : BaseField
     {
-        public Euro(string value) : base(value)
+        public Euro(string value, float confidence) : base(value,confidence)
         {
             XPosition = 475;
             YPosition = 397;
