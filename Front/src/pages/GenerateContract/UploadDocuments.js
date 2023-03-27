@@ -7,8 +7,8 @@ import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 import ExempleContractCard from "examples/Cards/ExemplesCard";
 import bgImage from "assets/images/generare-contract.jpeg";
-import idImage from "assets/images/exemplu-buletin.jpeg";
-import carIdImage from "assets/images/exemplu-carte-auto.jpeg";
+import idImage from "assets/images/exemplu-buletin.jpg";
+import carIdImage from "assets/images/exemplu-carte-auto.jpg";
 import UserInputs from "./UserInputs";
 
 const UploadDocuments = () => {
