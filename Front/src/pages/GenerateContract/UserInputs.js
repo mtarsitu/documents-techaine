@@ -9,15 +9,17 @@ import MKButton from "components/MKButton";
 import MKInput from "components/MKInput";
 import MKTypography from "components/MKTypography";
 import bgImage from "assets/images/generare-contract.jpeg";
+import LoadingSpinner from "components/Spinner/spinner";
 import CompletedDoc from "./CompletedDoc";
-
+// https://autocontract.azurewebsites.net/
 function UserInputs({ files, setStep, step }) {
   const [seller, setSeller] = useState({});
   const [buyer, setBuyer] = useState({});
   const [auto, setAuto] = useState({});
-  console.log(files);
+  const [loading, setLoading] = useState(false);
   const upload = async (form) => {
     try {
+      setLoading(true);
       const response = await axios.post(
         "https://autocontract.azurewebsites.net/Documents/getResult",
         form
@@ -25,6 +27,9 @@ function UserInputs({ files, setStep, step }) {
       setBuyer(response.data.buyer);
       setSeller(response.data.seller);
       setAuto(response.data.auto);
+      setTimeout(() => {
+        setLoading(false);
+      }, 100);
       setStep(step + 1);
     } catch (err) {
       console.warn(err);
@@ -69,15 +74,17 @@ function UserInputs({ files, setStep, step }) {
               boxShadow: ({ boxShadows: { xxl } }) => xxl,
             }}
           >
-            <MKTypography variant="h3" mb={4}>
-              Pasul 2
-            </MKTypography>
-            <MKTypography variant="h6" mb={4}>
-              Introdu pretul de vanzare al masinii ca sa il putem completa in contract!
-            </MKTypography>
-            <MKBox width="100%" component="form" method="post" mt={10} onSubmit={setForm}>
-              <Grid container spacing={3}>
-                {/* <Grid item xs={12} md={6}>
+            {!loading && (
+              <>
+                <MKTypography variant="h3" mb={4}>
+                  Pasul 2
+                </MKTypography>
+                <MKTypography variant="h6" mb={4}>
+                  Introdu pretul de vanzare al masinii ca sa il putem completa in contract!
+                </MKTypography>
+                <MKBox width="100%" component="form" method="post" mt={10} onSubmit={setForm}>
+                  <Grid container spacing={3}>
+                    {/* <Grid item xs={12} md={6}>
                   <MKInput
                     type="email"
                     variant="standard"
@@ -169,26 +176,29 @@ function UserInputs({ files, setStep, step }) {
                     fullWidth
                   />
                 </Grid> */}
-                <Grid container item justifyContent="center" xs={12} mt={2} mb={2}>
-                  <MKBox width="80%">
-                    <MKInput
-                      color="info"
-                      type="text"
-                      label="*** Pretul masinii"
-                      placeholder="In cifre, il transformam si in litere"
-                      name="price"
-                      InputLabelProps={{ shrink: true }}
-                      fullWidth
-                    />
-                  </MKBox>
-                </Grid>
-              </Grid>
-              <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
-                <MKButton type="submit" variant="gradient" color="info">
-                  Urmatorul pas
-                </MKButton>
-              </Grid>
-            </MKBox>
+                    <Grid container item justifyContent="center" xs={12} mt={2} mb={2}>
+                      <MKBox width="80%">
+                        <MKInput
+                          color="info"
+                          type="text"
+                          label="*** Pretul masinii"
+                          placeholder="In cifre, il transformam si in litere"
+                          name="price"
+                          InputLabelProps={{ shrink: true }}
+                          fullWidth
+                        />
+                      </MKBox>
+                    </Grid>
+                  </Grid>
+                  <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
+                    <MKButton type="submit" variant="gradient" color="info">
+                      Urmatorul pas
+                    </MKButton>
+                  </Grid>
+                </MKBox>
+              </>
+            )}
+            {loading && <LoadingSpinner />}
           </Card>
         </MKBox>
       ) : (

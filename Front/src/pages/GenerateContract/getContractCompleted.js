@@ -7,7 +7,7 @@ const day = date.getDate();
 const month = date.getMonth() + 1;
 const year = date.getFullYear();
 const currentDate = `${day}/${month}/${year}`;
-
+// https://autocontract.azurewebsites.net/
 export default async function GetContractCompleted(seller, buyer, auto) {
   const response = await axios.get("https://autocontract.azurewebsites.net/Documents/getPdf");
   const document = Base64ToArrayBuffer(response.data);
