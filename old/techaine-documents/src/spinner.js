@@ -8,7 +8,7 @@ export default function LoadingSpinner() {
         <div className="loading-spinner"></div>
       </div>
       <div className="text">
-        Scanare in procesare
+        Scanarea documentelor este in procesare! Te rugam sa nu improspatezi pagina!
       </div>
     </>
   );

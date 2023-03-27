@@ -21,7 +21,7 @@ namespace API_auto.mappers
                 else if(field.Key == "euro"){autoId.euro = field.Value.Content != null ? new Euro(field.Value.Content,(float)field.Value.Confidence) : new Euro("-",0.6f);}
             }
             autoId.price = new Price(price.ToString(),0.8f);
-            autoId.letterPrice = new LetterPrice(PriceHelper.ConversieNumarDouble(price),0.8f);
+            autoId.letterPrice = new LetterPrice(PriceHelper.ConversieNumarIntreg((int)price),0.8f);
             autoId.autoCardId = new AutoCardId("-",0.6f);
             autoId.plateNumber = new PlateNumber("-",0.6f);
             autoId.itpExpire = new ItpExpire("-",0.6f);
