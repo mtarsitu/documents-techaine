@@ -3,7 +3,6 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
-
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -23,7 +22,17 @@ function Footer() {
             mb={{ xs: 3, lg: 0 }}
           >
             <MKTypography variant="h6" textTransform="uppercase" mb={{ xs: 2, lg: 3 }}>
-              Auto Completare Contracte .ro
+              autocontract.ro
+            </MKTypography>
+            <MKTypography variant="h6" textTransform="uppercase" mb={{ xs: 2, lg: 3 }}>
+              direct advertising solution s.r.l.
+            </MKTypography>
+            <MKTypography variant="button" fontWeight="regular" opacity={0.8} mb={5}>
+              Bucuresti Sec 3, Str NUCULUI, Nr. 6, Bloc V-101, Scara 2, Etaj 3, Ap. 41
+              <br />
+              Cod unic de inregistrare: 16685210
+              <br />
+              Reg. Comertului: J40/13289/17.08.2004
             </MKTypography>
             <Stack
               component="ul"
@@ -77,6 +86,28 @@ function Footer() {
                   href="/pachete"
                 >
                   Costuri
+                </MKTypography>
+              </MKBox>
+              <MKBox component="li">
+                <MKTypography
+                  variant="button"
+                  fontWeight="regular"
+                  opacity={0.8}
+                  component={Link}
+                  href="https://anpc.ro/"
+                >
+                  ANPC
+                </MKTypography>
+              </MKBox>
+              <MKBox component="li">
+                <MKTypography
+                  variant="button"
+                  fontWeight="regular"
+                  opacity={0.8}
+                  component={Link}
+                  href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO"
+                >
+                  SOL
                 </MKTypography>
               </MKBox>
             </Stack>
