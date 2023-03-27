@@ -4,8 +4,8 @@ namespace API_auto.helpers
     {
         public static string WithoutDiacritics(string incomingData)
         {
-            string data = "ăĂâÂãîÎșȘşțȚţ";
-            string normalData = "aAaAiaIsSstTt";
+            string data = "ăĂâÂãîÎșȘŞşțȚţ";
+            string normalData = "aAaAiaIsSSstTt";
             List<char>  diactrics = new List<char>();
             List<char>  withoutDiactrics = new List<char>();
             diactrics.AddRange(data);

@@ -26,10 +26,13 @@ namespace API_auto.Controllers
         [HttpPost("getResult")]
         public async Task<OutDocuments> GetResult([FromForm] IncomingImages file)
         {
-            var sellerResult = await _service.GetOcrDocument(file.SellerId, ClientType.Seller);
-            var buyerResult = await _service.GetOcrDocument(file.BuyerId, ClientType.Buyer);
-            var autoResult = await _autoService.GetOcrAutoDocument(file.AutoId,file.Price);
+            var sellerResultTask = _service.GetOcrDocument(file.SellerId, ClientType.Seller);
+            var buyerResultTask = _service.GetOcrDocument(file.BuyerId, ClientType.Buyer);
+            var autoResultTask = _autoService.GetOcrAutoDocument(file.AutoId,file.Price);
             // List<DocumentId> idDates = new List<DocumentId>{sellerResult};
+            var (sellerResult,buyerResult,autoResult)
+             = await TaskExtensionsHelper.WhenAll(sellerResultTask, buyerResultTask,autoResultTask);
+            
             var outData = new OutDocuments
             {
                 Seller = sellerResult,

@@ -27,7 +27,7 @@ namespace API_auto.mappers
                         conf += (float)field.Value.Confidence;
                     }
                 else if(field.Key == "Citizen"){client.citizen= field.Value.Content == null ? new Citizien("-",clientType,0.6f):new Citizien(TextHelper.WithoutDiacritics(field.Value.Content),clientType,(float)field.Value.Confidence);}
-                else if(field.Key == "Adress")
+                else if(field.Key == "Address")
                 {
                     client.county= field.Value.Content == null ? new County("-",clientType, 0.6f): new County(TextHelper.GetCounty(field.Value.Content),clientType, (float)field.Value.Confidence);
                     client.city = field.Value.Content == null ? new City("-",clientType, 0.6f) : new City(TextHelper.GetCity(field.Value.Content),clientType, (float)field.Value.Confidence);
