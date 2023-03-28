@@ -5,14 +5,14 @@ import Divider from "@mui/material/Divider";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
-
+import DefaultNavbar from "global/navbars/DefaultNavbar";
 // Author page sections
 // import Posts from "pages/LandingPages/Author/sections/Posts";
 // import Contact from "pages/LandingPages/Author/sections/Contact";
 
 // Images
 import bgImage from "assets/images/vanzare-cumparare.jpg";
-
+import routes from "routes";
 import PricingCard from "./pricingCard";
 
 const tiers = [
@@ -53,6 +53,16 @@ const tiers = [
 function SecondPricing() {
   return (
     <>
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "/contract",
+          label: "Generare Contract",
+          color: "info",
+        }}
+        sticky
+      />
       <MKBox bgColor="white">
         <MKBox
           minHeight="25rem"

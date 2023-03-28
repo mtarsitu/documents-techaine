@@ -28,7 +28,7 @@ function Counters() {
               count={100}
               suffix="%"
               title="Securizat"
-              description="La AutoContracte.ro, protejarea informațiilor clienților noștri este o prioritate absolută. Nu reținem nicio informație furnizată de clienții noștri, nici măcar fotografiile încărcate pentru a completa contractul vanzare cumparare auto."
+              description="La autoContract.ro, protejarea informațiilor clienților noștri este o prioritate absolută. Nu reținem nicio informație furnizată de clienții noștri, nici măcar fotografiile încărcate pentru a completa contractul vanzare cumparare auto."
             />
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />
           </Grid>
@@ -37,7 +37,7 @@ function Counters() {
               count={100}
               suffix="%"
               title="Model autentic"
-              description="Contract vanzare cumparare auto pe care îl veți primi de la AutoContracte.ro este un document recunoscut oficial atât de Primărie, cât și de Poliția Rutieră și Direcția Regim Permise de Conducere și Înmatriculare a Vehiculelor (DRPCIV)."
+              description="Contract vanzare cumparare auto pe care îl veți primi de la autoContract.ro este un document recunoscut oficial atât de Primărie, cât și de Poliția Rutieră și Direcția Regim Permise de Conducere și Înmatriculare a Vehiculelor (DRPCIV)."
             />
           </Grid>
           <Grid item xs={12} md={3}>

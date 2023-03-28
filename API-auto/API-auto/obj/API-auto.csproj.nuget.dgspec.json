@@ -84,6 +84,10 @@
               "target": "Package",
               "version": "[6.27.0, )"
             },
+            "MobilpayEncryptDecrypt": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.32.1, )"

@@ -7,7 +7,7 @@ import Card from "@mui/material/Card";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKSocialButton from "components/MKSocialButton";
-
+import DefaultNavbar from "global/navbars/DefaultNavbar";
 // import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
 // Presentation page sections
@@ -19,13 +19,23 @@ import Testimonials from "pages/Presentation/sections/Testimonials";
 
 // Presentation page components
 // import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
-
+import routes from "routes";
 // Images
 import bgImage from "assets/images/contract-fata-vanzare.jpg";
 
 function Presentation() {
   return (
     <>
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "/contract",
+          label: "Generare Contract",
+          color: "info",
+        }}
+        sticky
+      />
       <MKBox
         minHeight="75vh"
         width="100%"
@@ -50,7 +60,7 @@ function Presentation() {
           }}
         />
         <Container>
-          <Grid container item xs={12} lg={7} justifyContent="center" mx="auto">
+          <Grid container item xs={12} lg={9} justifyContent="center" mx="auto">
             <MKTypography
               variant="h1"
               color="white"
@@ -58,11 +68,11 @@ function Presentation() {
               mb={1}
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
-                  fontSize: size["3xl"],
+                  fontSize: size[1],
                 },
               })}
             >
-              Auto-Generare Contracte{" "}
+              Contract vanzare-cumparare auto
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -71,8 +81,8 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Bună ziua și bun venit pe autocontracte.ro, unde ne specializăm în completarea
-              automată a contractelor de vânzare auto. Acum puteți evita orele lungi petrecute
+              Bună ziua și bun venit pe autocontract.ro, unde ne specializăm în completarea automată
+              a contractului de vânzare cumparare auto. Acum puteți evita orele lungi petrecute
               completând manual contracte, utilizând serviciul nostru ușor și rapid de completare
               automată a contractelor.
             </MKTypography>

@@ -6,13 +6,25 @@ import MKBox from "components/MKBox";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import DefaultNavbar from "global/navbars/DefaultNavbar";
 
+import routes from "routes";
 // Image
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 
 function ContactUs() {
   return (
     <>
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "/contract",
+          label: "Generare Contract",
+          color: "info",
+        }}
+        sticky
+      />
       <Grid container spacing={3} alignItems="center">
         <Grid item xs={12} lg={6}>
           <MKBox

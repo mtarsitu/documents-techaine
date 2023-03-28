@@ -5,8 +5,10 @@ import PropTypes from "prop-types";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
+import DefaultNavbar from "global/navbars/DefaultNavbar";
 import { triggerBase64Download } from "common-base64-downloader-react";
 import { useEffect, useState } from "react";
+import routes from "routes";
 import bgImage from "assets/images/generare-contract.jpeg";
 import GetContractCompleted from "./getContractCompleted";
 import { ToBase64 } from "./pdfHelpers";
@@ -37,6 +39,17 @@ function CompletedDoc({ seller, buyer, auto, setSeller, setBuyer, setAuto, step,
   }, []);
   return (
     <>
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "/",
+          label: "Stop generare",
+          color: "error",
+        }}
+        // transparent
+        // light
+      />
       {step === 3 ? (
         <MKBox bgColor="white">
           <MKBox

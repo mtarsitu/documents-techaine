@@ -4,7 +4,7 @@ import Card from "@mui/material/Card";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-
+import DefaultNavbar from "global/navbars/DefaultNavbar";
 // Author page sections
 // import Posts from "pages/LandingPages/Author/sections/Posts";
 // import Contact from "pages/LandingPages/Author/sections/Contact";
@@ -12,6 +12,7 @@ import MKTypography from "components/MKTypography";
 // Images
 import bgImage from "assets/images/parc-auto-blog.jpg";
 import { useEffect, useState } from "react";
+import routes from "routes";
 import MainBlogs from "./components/mainBlogs";
 import post1 from "./components/blog-post.1.md";
 import post2 from "./components/blog-post.2.md";
@@ -34,6 +35,16 @@ function Blogs() {
   }, []);
   return (
     <>
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "/contract",
+          label: "Generare Contract",
+          color: "info",
+        }}
+        sticky
+      />
       <MKBox bgColor="white">
         <MKBox
           minHeight="25rem"
@@ -62,7 +73,7 @@ function Blogs() {
           }}
         >
           <MKTypography variant="h3" mb={6}>
-            Articole Auto-Completare Contracte
+            Articole blog autoContract.ro - contract auto
           </MKTypography>
         </Card>
         {mainBlogs.length !== 0 && <MainBlogs title="Articole noastre" posts={mainBlogs} />}

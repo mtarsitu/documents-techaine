@@ -11,7 +11,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "assets/theme";
 import Presentation from "layouts/pages/presentation";
 import UploadDocumentsPages from "layouts/pages/upload";
-import DefaultNavbar from "global/navbars/DefaultNavbar";
 import Footer from "global/Footer";
 // Material Kit 2 React routes
 import routes from "routes";
@@ -41,16 +40,6 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <DefaultNavbar
-        routes={routes}
-        action={{
-          type: "internal",
-          route: "/contract",
-          label: "Generare Contract",
-          color: "info",
-        }}
-        sticky
-      />
       <Routes>
         {getRoutes(routes)}
         <Route path="/" element={<Presentation />} />

@@ -64,5 +64,11 @@ namespace API_auto.Controllers
         {
             return PdfHelper.GetPdfBytes();
         }
+
+        [HttpPost("paymentTest")]
+        public void PaymentTest([FromForm]Payment payment)
+        {
+            _Default.btnPay_Click(payment);
+        }
     }
 }

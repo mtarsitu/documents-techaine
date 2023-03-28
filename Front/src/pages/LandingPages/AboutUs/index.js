@@ -8,20 +8,30 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 // Material Kit 2 React examples
-
+import DefaultNavbar from "global/navbars/DefaultNavbar";
 // About Us page sections
 import About from "pages/LandingPages/AboutUs/sections/About";
 import Information from "pages/LandingPages/AboutUs/sections/Information";
 // import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
 
 // Routes
-
+import routes from "routes";
 // Images
 import bgImage from "assets/images/despre-noi-poza.jpeg";
 
 function AboutUs() {
   return (
     <>
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "/contract",
+          label: "Generare Contract",
+          color: "info",
+        }}
+        sticky
+      />
       <MKBox
         minHeight="75vh"
         width="100%"

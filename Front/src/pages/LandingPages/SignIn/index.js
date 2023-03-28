@@ -13,13 +13,13 @@ import MuiLink from "@mui/material/Link";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import GoogleIcon from "@mui/icons-material/Google";
-
+import DefaultNavbar from "global/navbars/DefaultNavbar";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
-
+import routes from "routes";
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
@@ -30,6 +30,16 @@ function SignInBasic() {
 
   return (
     <>
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "/contract",
+          label: "Generare Contract",
+          color: "info",
+        }}
+        sticky
+      />
       <MKBox
         position="absolute"
         top={0}

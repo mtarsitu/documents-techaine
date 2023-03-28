@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
+import DefaultNavbar from "global/navbars/DefaultNavbar";
+import routes from "routes";
 import { triggerBase64Download } from "common-base64-downloader-react";
 import { useEffect, useState } from "react";
 import bgImage from "assets/images/generare-contract.jpeg";
@@ -34,6 +36,17 @@ function EditedCompletedDoc({ seller, buyer, auto }) {
   }, []);
   return (
     <>
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "/",
+          label: "Stop generare",
+          color: "error",
+        }}
+        // transparent
+        // light
+      />
       <MKBox bgColor="white">
         <MKBox
           minHeight="25rem"

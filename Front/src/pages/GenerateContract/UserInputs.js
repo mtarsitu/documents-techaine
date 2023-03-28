@@ -8,6 +8,8 @@ import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
 import MKInput from "components/MKInput";
 import MKTypography from "components/MKTypography";
+import DefaultNavbar from "global/navbars/DefaultNavbar";
+import routes from "routes";
 import bgImage from "assets/images/generare-contract.jpeg";
 import LoadingSpinner from "components/Spinner/spinner";
 import CompletedDoc from "./CompletedDoc";
@@ -45,6 +47,17 @@ function UserInputs({ files, setStep, step }) {
   };
   return (
     <>
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "/",
+          label: "Stop generare",
+          color: "error",
+        }}
+        // transparent
+        // light
+      />
       {step === 2 ? (
         <MKBox bgColor="white">
           <MKBox

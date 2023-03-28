@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cbltKw1P3lmlU5cIJr8UMnHFZIzxnJwx4TaiTxj9OKHDlFIw8UCeRYaZu7nxSerkEQnYpHKWSCktnl97izrOng==",
+  "dgSpecHash": "5BbLwPJUMkpZbnJq33pet4u5AQRmZfXZN9qG9V5eMkv81WxPxUN37gRUfvzpm7A5QltWj+OQDyd6p3RV/lgREw==",
   "success": true,
   "projectFilePath": "/Users/m.t./Documents/documents-techaine/API-auto/API-auto/API-auto.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "/Users/m.t./.nuget/packages/microsoft.aspnetcore.identity/2.2.0/microsoft.aspnetcore.identity.2.2.0.nupkg.sha512",
     "/Users/m.t./.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/7.0.4/microsoft.aspnetcore.identity.entityframeworkcore.7.0.4.nupkg.sha512",
     "/Users/m.t./.nuget/packages/microsoft.aspnetcore.openapi/7.0.4/microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
+    "/Users/m.t./.nuget/packages/microsoft.aspnetcore.staticfiles/1.0.0/microsoft.aspnetcore.staticfiles.1.0.0.nupkg.sha512",
     "/Users/m.t./.nuget/packages/microsoft.aspnetcore.webutilities/2.2.0/microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "/Users/m.t./.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/m.t./.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
@@ -79,6 +80,7 @@
     "/Users/m.t./.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "/Users/m.t./.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
     "/Users/m.t./.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "/Users/m.t./.nuget/packages/mobilpayencryptdecrypt/1.0.3/mobilpayencryptdecrypt.1.0.3.nupkg.sha512",
     "/Users/m.t./.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/m.t./.nuget/packages/mysql.data/8.0.32.1/mysql.data.8.0.32.1.nupkg.sha512",
     "/Users/m.t./.nuget/packages/mysql.entityframeworkcore/7.0.0/mysql.entityframeworkcore.7.0.0.nupkg.sha512",
@@ -220,6 +222,16 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.Web.Infrastructure 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Web.Infrastructure",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MobilpayEncryptDecrypt 1.0.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MobilpayEncryptDecrypt",
       "targetGraphs": [
         "net7.0"
       ]

@@ -5,10 +5,12 @@ import { useState } from "react";
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import DefaultNavbar from "global/navbars/DefaultNavbar";
 import ExempleContractCard from "examples/Cards/ExemplesCard";
 import bgImage from "assets/images/generare-contract.jpeg";
 import idImage from "assets/images/exemplu-buletin.jpg";
 import carIdImage from "assets/images/exemplu-carte-auto.jpg";
+import routes from "routes";
 import UserInputs from "./UserInputs";
 
 const UploadDocuments = () => {
@@ -44,6 +46,17 @@ const UploadDocuments = () => {
 
   return (
     <>
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "/",
+          label: "Stop generare",
+          color: "error",
+        }}
+        // transparent
+        // light
+      />
       {step === 1 ? (
         <MKBox bgColor="white">
           <MKBox
