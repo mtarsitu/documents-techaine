@@ -18,10 +18,13 @@ import PricingCard from "./pricingCard";
 const tiers = [
   {
     title: "One Time",
-    price: "45",
+    price: "27.99",
     description: [
+      "1 Contract autocompletat",
       "Scanare buletine vanzator si cumparator",
+      "Scanare carte de identitate masina",
       "Verificare date extrase din buletine",
+      "Verificare date extrase din cartea masinii",
       "Auto-completare contract",
       "Descarcare directa si trimitere email",
     ],
@@ -31,20 +34,36 @@ const tiers = [
   {
     title: "Standard Plus",
     subheader: "Most popular",
-    price: "150",
+    price: "100",
     description: [
-      "80 pachete One Time",
-      "Suport Email",
+      "50 Contract autocompletat",
+      "Scanare buletine vanzator si cumparator",
+      "Scanare carte de identitate masina",
+      "Verificare date extrase din buletine",
+      "Verificare date extrase din cartea masinii",
       "Auto-completare contract",
       "Descarcare directa si trimitere email",
+      "Suport Email",
     ],
     buttonText: "Cumpara",
     buttonVariant: "contained",
   },
   {
     title: "Standard Pro",
-    price: "250",
-    description: ["Generare 200 contracte", "Acces nelimitat", "Suport Email Prioritar", ""],
+    price: "200",
+    description: [
+      "Generare 120 contracte",
+      "Acces nelimitat",
+      "1 Contract autocompletat",
+      "Scanare buletine vanzator si cumparator",
+      "Scanare carte de identitate masina",
+      "Verificare date extrase din buletine",
+      "Verificare date extrase din cartea masinii",
+      "Auto-completare contract",
+      "Descarcare directa si trimitere email",
+      "Suport Email Prioritar",
+      "",
+    ],
     buttonText: "Contact us",
     buttonVariant: "outlined",
   },
@@ -83,7 +102,7 @@ function SecondPricing() {
           sx={{
             p: 2,
             mx: { xs: 2, lg: 3 },
-            mt: -22,
+            mt: -30,
             mb: 4,
             backgroundColor: ({ palette: { white }, functions: { rgba } }) => rgba(white.main, 0.8),
             backdropFilter: "saturate(200%) blur(30px)",
@@ -95,7 +114,7 @@ function SecondPricing() {
               <PricingCard
                 variant="contained"
                 color="dark"
-                price="450"
+                price={tiers[0].price}
                 title={tiers[0].title}
                 icon="info"
                 description={tiers[0].description}
@@ -111,7 +130,7 @@ function SecondPricing() {
               <PricingCard
                 variant="outlined"
                 color="info"
-                price="450"
+                price={tiers[1].price}
                 title={tiers[1].title}
                 icon="info"
                 name="Stefan Toader"
@@ -128,7 +147,7 @@ function SecondPricing() {
               <PricingCard
                 variant="contained"
                 color="dark"
-                price="450"
+                price={tiers[2].price}
                 title={tiers[2].title}
                 icon="info"
                 description={tiers[2].description}

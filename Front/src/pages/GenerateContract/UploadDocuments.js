@@ -20,7 +20,6 @@ const UploadDocuments = () => {
     autoCard: "",
   });
   const [step, setStep] = useState(1);
-
   const nextStep = () => {
     setStep(step + 1);
   };

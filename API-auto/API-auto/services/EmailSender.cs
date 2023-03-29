@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using System.Threading.Tasks;
 using API_auto.model;
 using MimeKit;
 using MailKit.Net.Smtp;
@@ -28,16 +23,16 @@ namespace API_auto.services
         emailMessage.To.AddRange(message.To);
         emailMessage.Subject = message.Subject;
         emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Text) { Text = message.Content };
-        byte[] img;
+        byte[] byteArray;
         var bodyBuilder = new BodyBuilder { HtmlBody = string.Format("<h2 style='color:red;'>{0}</h2>", message.Content) };
         if(message.Logo != null )
         {
             using(var ms = new MemoryStream())
             {
                 message.Logo.CopyTo(ms);
-                img = ms.ToArray();
+                byteArray = ms.ToArray();
             }
-            bodyBuilder.Attachments.Add(message.Logo.FileName,img,ContentType.Parse(message.Logo.ContentType));
+            bodyBuilder.Attachments.Add(message.Logo.FileName,byteArray,ContentType.Parse(message.Logo.ContentType));
         }
         emailMessage.Body = bodyBuilder.ToMessageBody();
         return emailMessage;

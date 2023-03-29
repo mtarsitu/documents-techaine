@@ -1,10 +1,4 @@
 ﻿<Properties StartupConfiguration="{7F7A0806-18F0-464B-90A4-B87B935AD46A}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/m.t./Documents/documents-techaine/API-auto/API-auto/services/IdReaderService.cs" relfile="API-auto/services/IdReaderService.cs" line="30" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.API-auto PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="API-auto/Program.cs">
     <Files>
@@ -41,5 +35,11 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/m.t./Documents/documents-techaine/API-auto/API-auto/services/IdReaderService.cs" relfile="API-auto/services/IdReaderService.cs" line="30" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using API_auto.DTO;
 using API_auto.services;
@@ -30,9 +31,14 @@ namespace API_auto.Controllers
             var house = new Message(new string[] {"social@techaine.com"},"Cerere contact autocontract.ro",$"{dto.ClientSubject}\n{dto.ClientMessage}",dto.AutoContractLogo);
             await _emailSender.SendEmail(client);
             await _emailSender.SendEmail(house);
-
         }
 
+        [HttpPost("sendPdfEmail")]
+        public async Task SendPdf([FromForm]PdfDto pdf)
+        {
+            var seller = new Message(new string[] {pdf.SellerEmail,pdf.BuyerEmail},"Contractauto.ro - Contract vanzare cumparare auto","S-a generat urmatorul contract!",pdf.Pdf);
+            await _emailSender.SendEmail(seller);
+        }
         
     }
 }

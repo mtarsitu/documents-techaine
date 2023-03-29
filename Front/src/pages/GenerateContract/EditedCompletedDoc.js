@@ -7,6 +7,7 @@ import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 import DefaultNavbar from "global/navbars/DefaultNavbar";
 import routes from "routes";
+import axios from "axios";
 import { triggerBase64Download } from "common-base64-downloader-react";
 import { useEffect, useState } from "react";
 import bgImage from "assets/images/generare-contract.jpeg";
@@ -24,6 +25,25 @@ function EditedCompletedDoc({ seller, buyer, auto }) {
       `<iframe src="${base64PDF}" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>'`
     );
     win.document.close();
+  };
+  const handleSendEmail = async () => {
+    const contract = new Blob([pdfBytes], { type: "application/pdf" });
+    console.log(pdfBytes);
+    const formData = new FormData();
+    formData.append("sellerEmail", seller.email.value);
+    formData.append("buyerEmail", buyer.email.value);
+    formData.append(
+      "pdf",
+      contract,
+      `contract vanzare cumparare ${auto.mark.value}-${auto.year.value}`
+    );
+
+    try {
+      const response = await axios.post("http://localhost:5204/Email/sendPdfEmail", formData);
+      console.log(response);
+    } catch (err) {
+      console.warn(err);
+    }
   };
 
   useEffect(() => {
@@ -102,6 +122,9 @@ function EditedCompletedDoc({ seller, buyer, auto }) {
                   <Grid item>
                     <MKButton variant="gradient" color="info" onClick={handlePrint}>
                       Printeaza
+                    </MKButton>
+                    <MKButton variant="gradient" color="info" onClick={handleSendEmail}>
+                      Trimite pe mailurile vanzatorului si al cumparatorului
                     </MKButton>
                   </Grid>
                 </Grid>

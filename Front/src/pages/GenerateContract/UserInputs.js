@@ -22,10 +22,7 @@ function UserInputs({ files, setStep, step }) {
   const upload = async (form) => {
     try {
       setLoading(true);
-      const response = await axios.post(
-        "https://autocontract.azurewebsites.net/Documents/getResult",
-        form
-      );
+      const response = await axios.post("http://localhost:5204/Documents/getResult", form);
       setBuyer(response.data.buyer);
       setSeller(response.data.seller);
       setAuto(response.data.auto);
@@ -133,7 +130,7 @@ function UserInputs({ files, setStep, step }) {
                         type="email"
                         variant="standard"
                         label="Email-ul cumparatorului"
-                        name="sellerEmail"
+                        name="buyerEmail"
                         InputLabelProps={{ shrink: true }}
                         fullWidth
                       />

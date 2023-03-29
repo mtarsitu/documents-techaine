@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
+import axios from "axios";
 import DefaultNavbar from "global/navbars/DefaultNavbar";
 import { triggerBase64Download } from "common-base64-downloader-react";
 import { useEffect, useState } from "react";
@@ -19,6 +20,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 function CompletedDoc({ seller, buyer, auto, setSeller, setBuyer, setAuto, step, setStep }) {
   const [pdfBytes, setPdfBytes] = useState();
   const [base64PDF, setBase64Pdf] = useState();
+  // const [emailPdf, setEmailPdf] = useState();
   const handlePrint = () => {
     const win = window.open();
     win.document.write(
@@ -29,10 +31,31 @@ function CompletedDoc({ seller, buyer, auto, setSeller, setBuyer, setAuto, step,
   const handleEdit = () => {
     setStep(step + 1);
   };
+  const handleSendEmail = async () => {
+    const contract = new Blob([pdfBytes], { type: "application/pdf" });
+    console.log(pdfBytes);
+    const formData = new FormData();
+    formData.append("sellerEmail", seller.email.value);
+    formData.append("buyerEmail", buyer.email.value);
+    formData.append(
+      "pdf",
+      contract,
+      `contract vanzare cumparare ${auto.mark.value}-${auto.year.value}`
+    );
+
+    try {
+      const response = await axios.post("http://localhost:5204/Email/sendPdfEmail", formData);
+      console.log(response);
+    } catch (err) {
+      console.warn(err);
+    }
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
     GetContractCompleted(seller, buyer, auto).then((result) => {
       setPdfBytes(result);
+      // setEmailPdf(Array.from(result));
       ToBase64(result).then((response) => {
         setBase64Pdf(`data:application/pdf;base64,${response}`);
       });
@@ -113,6 +136,11 @@ function CompletedDoc({ seller, buyer, auto, setSeller, setBuyer, setAuto, step,
                     <Grid item>
                       <MKButton variant="gradient" color="info" onClick={handleEdit}>
                         Editeaza date
+                      </MKButton>
+                    </Grid>
+                    <Grid item>
+                      <MKButton variant="gradient" color="info" onClick={handleSendEmail}>
+                        Trimite pe email
                       </MKButton>
                     </Grid>
                   </Grid>
