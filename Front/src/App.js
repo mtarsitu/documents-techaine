@@ -11,6 +11,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "assets/theme";
 import Presentation from "layouts/pages/presentation";
 import UploadDocumentsPages from "layouts/pages/upload";
+import Register from "pages/LandingPages/Register";
 import Footer from "global/Footer";
 // Material Kit 2 React routes
 import routes from "routes";
@@ -46,6 +47,7 @@ export default function App() {
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/contract" element={<UploadDocumentsPages />} />
         <Route path="/cumpara-pachete" />
+        <Route path="/inregistrare" element={<Register />} />
       </Routes>
       <Footer />
     </ThemeProvider>

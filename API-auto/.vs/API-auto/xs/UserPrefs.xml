@@ -1,15 +1,14 @@
 ﻿<Properties StartupConfiguration="{7F7A0806-18F0-464B-90A4-B87B935AD46A}|https">
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/m.t./Documents/documents-techaine/API-auto/API-auto/services/IdReaderService.cs" relfile="API-auto/services/IdReaderService.cs" line="30" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.API-auto PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="API-auto/services/PaymentServices.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="API-auto/Program.cs">
     <Files>
-      <File FileName="API-auto/Program.cs" />
+      <File FileName="API-auto/Program.cs" Line="16" Column="44" />
       <File FileName="API-auto/Controllers/WeatherForecastController.cs" />
       <File FileName="API-auto/Controllers/DocumentsController.cs" />
       <File FileName="API-auto/services/IdReaderService.cs" />
@@ -18,20 +17,17 @@
       <File FileName="API-auto/mappers/IdMapper.cs" />
       <File FileName="API-auto/services/AutoIdReaderService.cs" />
       <File FileName="API-auto/model/AutoId.cs" />
-      <File FileName="API-auto/model/IncomingImages.cs" />
       <File FileName="API-auto/mappers/IdMock.cs" />
       <File FileName="API-auto/helpers/PdfHelper.cs" />
       <File FileName="API-auto/helpers/priceHelper.cs" />
       <File FileName="API-auto/helpers/TextHelper.cs" />
       <File FileName="API-auto/mappers/AutoMapper.cs" />
-      <File FileName="API-auto/services/PaymentServices.cs" Line="51" Column="7" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="API-auto" expanded="True">
-            <Node name="API-auto" expanded="True">
-              <Node name="Dependencies" selected="True" />
+            <Node name="API-auto" expanded="True" selected="True">
               <Node name="Controllers" expanded="True" />
               <Node name="helpers" expanded="True" />
               <Node name="mappers" expanded="True" />
@@ -45,4 +41,5 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>
