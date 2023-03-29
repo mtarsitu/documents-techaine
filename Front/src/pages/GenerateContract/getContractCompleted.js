@@ -15,7 +15,7 @@ export default async function GetContractCompleted(seller, buyer, auto) {
   const pages = pdfDoc.getPages();
   const firstPage = pages[0];
 
-  const d = await pdfDoc.embedFont(StandardFonts.CourierBold);
+  const customFont = await pdfDoc.embedFont(StandardFonts.CourierBold);
   Object.entries(seller).map(
     (detail) =>
       detail[1].value !== undefined &&
@@ -23,7 +23,7 @@ export default async function GetContractCompleted(seller, buyer, auto) {
         x: detail[1].xPosition,
         y: detail[1].yPosition,
         size: 10,
-        font: d,
+        font: customFont,
         color: rgb(0.95, 0.1, 0.1),
       })
   );
@@ -34,7 +34,7 @@ export default async function GetContractCompleted(seller, buyer, auto) {
         x: detail[1].xPosition,
         y: detail[1].yPosition,
         size: detail[0] === "letterPrice" ? 6 : 10,
-        font: d,
+        font: customFont,
         color: rgb(0.95, 0.1, 0.1),
       }) &&
       console.log(detail)
@@ -46,7 +46,7 @@ export default async function GetContractCompleted(seller, buyer, auto) {
         x: detail[1].xPosition,
         y: detail[1].yPosition,
         size: 10,
-        font: d,
+        font: customFont,
         color: rgb(0.95, 0.1, 0.1),
       })
   );
@@ -54,7 +54,7 @@ export default async function GetContractCompleted(seller, buyer, auto) {
     x: 200,
     y: 248,
     size: 10,
-    font: d,
+    font: customFont,
     color: rgb(0.95, 0.1, 0.1),
   });
 
