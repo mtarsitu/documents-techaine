@@ -18,7 +18,7 @@ function ContactUs() {
   const navigate = useNavigate();
   const upload = async (form) => {
     try {
-      await axios.post("http://localhost:5204/Email/sendEmail", form);
+      await axios.post("https://autocontract.azurewebsites.net/Email/sendEmail", form);
       navigate("/");
     } catch (err) {
       console.warn(err);

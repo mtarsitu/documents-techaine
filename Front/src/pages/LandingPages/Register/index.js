@@ -29,7 +29,7 @@ function Register() {
 
   const upload = async (form) => {
     try {
-      await axios.post("http://localhost:5204/Account/register", form);
+      await axios.post("https://autocontract.azurewebsites.net/Account/register", form);
     } catch (err) {
       console.warn(err);
     }

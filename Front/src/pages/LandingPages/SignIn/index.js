@@ -28,7 +28,7 @@ function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
   const upload = async (form) => {
     try {
-      const response = await axios.post("http://localhost:5204/Account/login", form);
+      const response = await axios.post("https://autocontract.azurewebsites.net/Account/login", form);
       console.log(response);
     } catch (err) {
       console.warn(err);
