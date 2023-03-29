@@ -35,7 +35,7 @@ namespace API_auto.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
+        public async Task<ActionResult<UserDto>> Login([FromForm]LoginDto loginDto)
         {
             var user = await _userManager.FindByEmailAsync(loginDto.Email);
             if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password))
@@ -49,7 +49,7 @@ namespace API_auto.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult> Register(RegisterDto registerDto)
+        public async Task<ActionResult> Register([FromForm]RegisterDto registerDto)
         {
             var user = new User { Email = registerDto.Email, UserName=registerDto.Email };
 
