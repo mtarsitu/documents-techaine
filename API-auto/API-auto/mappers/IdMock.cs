@@ -1,17 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using API_auto.model;
 using API_auto.model.id;
 using API_auto.model.auto;
 using Microsoft.AspNetCore.Mvc;
 using API_auto.helpers;
+
 namespace API_auto.mappers
 {
     public static class IdMock
     {
-        public static DocumentId GetSeller([FromForm] IncomingImages file)
+        public static DocumentId GetSeller([FromForm] IncomingData file)
         {
             DocumentId seller = new DocumentId();
             seller.cnp = new Cnp("1890816460026",ClientType.Seller,0.98f);
@@ -34,7 +31,7 @@ namespace API_auto.mappers
             return seller;
         }
 
-        public static DocumentId GetBuyer([FromForm] IncomingImages file)
+        public static DocumentId GetBuyer([FromForm] IncomingData file)
         {
             DocumentId buyer = new DocumentId();
             buyer.cnp = new Cnp("B1890816460026",ClientType.Buyer,0.98f);
@@ -57,7 +54,7 @@ namespace API_auto.mappers
             return buyer;
         }
 
-        public static AutoId GetAuto([FromForm] IncomingImages file)
+        public static AutoId GetAuto([FromForm] IncomingData file)
         {
             AutoId auto = new AutoId();
             auto.mark = new Mark("Porsche",0.98f);

@@ -30,6 +30,7 @@ function CompletedDoc({ seller, buyer, auto, setSeller, setBuyer, setAuto, step,
     setStep(step + 1);
   };
   useEffect(() => {
+    window.scrollTo(0, 0);
     GetContractCompleted(seller, buyer, auto).then((result) => {
       setPdfBytes(result);
       ToBase64(result).then((response) => {

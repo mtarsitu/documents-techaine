@@ -13,13 +13,13 @@ namespace API_auto.services
         private static AzureKeyCredential credential = new AzureKeyCredential(apiKey);
         private static DocumentAnalysisClient client = new DocumentAnalysisClient(new Uri(endPoint),credential);
 
-        public async Task<AutoId> GetOcrAutoDocument(IFormFile image, double price)
+        public async Task<AutoId> GetOcrAutoDocument(IFormFile image, double price, string plateNumber)
         {
             
             var stream = ImageHelper.GetStreamPicture(image);
             AnalyzeDocumentOperation operation = await client.AnalyzeDocumentAsync(WaitUntil.Completed,"techaine-v1-auto",stream);
             AnalyzeResult result = operation.Value;
-            AutoId autoIdData = AutoMapper.GetAutoData(result,price);
+            AutoId autoIdData = AutoMapper.GetAutoData(result,price, plateNumber);
 
             return autoIdData;
         }

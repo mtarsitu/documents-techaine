@@ -19,13 +19,13 @@ namespace API_auto.services
 
         }
 
-        public async Task<DocumentId> GetOcrDocument(IFormFile image, ClientType clientType)
+        public async Task<DocumentId> GetOcrDocument(IFormFile image, ClientType clientType, string phone, string email)
         {
             
             var stream = ImageHelper.GetStreamPicture(image);
             AnalyzeDocumentOperation operation = await client.AnalyzeDocumentAsync(WaitUntil.Completed,"id-techaine-v8",stream);
             AnalyzeResult result = operation.Value;
-            DocumentId buyer = IdMapper.GetClientData(result, clientType);
+            DocumentId buyer = IdMapper.GetClientData(result, clientType, phone, email);
 
             return buyer;
         }

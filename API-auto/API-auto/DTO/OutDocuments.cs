@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace API_auto.model
+using API_auto.model;
+namespace API_auto.DTO
 {
     public class OutDocuments
     {

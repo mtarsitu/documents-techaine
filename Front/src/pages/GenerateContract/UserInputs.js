@@ -1,6 +1,6 @@
 // import MuiLink from "@mui/material/Link";
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Grid, Card } from "@mui/material";
 import axios from "axios";
@@ -45,6 +45,9 @@ function UserInputs({ files, setStep, step }) {
     formData.append("autoId", files.autoCard[0]);
     upload(formData);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <DefaultNavbar
@@ -97,98 +100,98 @@ function UserInputs({ files, setStep, step }) {
                 </MKTypography>
                 <MKBox width="100%" component="form" method="post" mt={10} onSubmit={setForm}>
                   <Grid container spacing={3}>
+                    <Grid item xs={12} md={6}>
+                      <MKInput
+                        type="email"
+                        variant="standard"
+                        label="Email-ul vanzatorului"
+                        name="sellerEmail"
+                        InputLabelProps={{ shrink: true }}
+                        fullWidth
+                      />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                      <MKInput
+                        variant="standard"
+                        label="Telefonul vanzatorului (nu este necesar)"
+                        name="sellerPhone"
+                        InputLabelProps={{ shrink: true }}
+                        fullWidth
+                      />
+                    </Grid>
                     {/* <Grid item xs={12} md={6}>
-                  <MKInput
-                    type="email"
-                    variant="standard"
-                    label="Email-ul vanzatorului (nu este necesar)"
-                    name="sellerEmail"
-                    InputLabelProps={{ shrink: true }}
-                    fullWidth
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput
-                    variant="standard"
-                    label="Telefonul vanzatorului (nu este necesar)"
-                    name="sellerPhone"
-                    InputLabelProps={{ shrink: true }}
-                    fullWidth
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput
-                    variant="standard"
-                    label="Codul postal al vanzatorului (nu este necesar)"
-                    name="sellerPhone"
-                    InputLabelProps={{ shrink: true }}
-                    fullWidth
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput
-                    type="email"
-                    variant="standard"
-                    label="Email-ul cumparatorului (nu este necesar)"
-                    name="sellerEmail"
-                    InputLabelProps={{ shrink: true }}
-                    fullWidth
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput
-                    variant="standard"
-                    label="Telefonul cumparatorului (nu este necesar)"
-                    name="buyerPhone"
-                    InputLabelProps={{ shrink: true }}
-                    fullWidth
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput
-                    variant="standard"
-                    label="Codul postal al cumparatorului (nu este necesar)"
-                    name="sellerPhone"
-                    InputLabelProps={{ shrink: true }}
-                    fullWidth
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput
-                    variant="standard"
-                    label="Numarul de inmatriculare"
-                    name="plateNumber"
-                    InputLabelProps={{ shrink: true }}
-                    fullWidth
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput
-                    variant="standard"
-                    label="Cand expira ITP-ul (nu este necesar)"
-                    name="itpExpire"
-                    InputLabelProps={{ shrink: true }}
-                    fullWidth
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput
-                    variant="standard"
-                    label="Cumparat cu? (nu este necesar)"
-                    name="buyedWith"
-                    InputLabelProps={{ shrink: true }}
-                    fullWidth
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <MKInput
-                    variant="standard"
-                    label="Data dobandirii? (nu este necesar)"
-                    name="buyedAt"
-                    InputLabelProps={{ shrink: true }}
-                    fullWidth
-                  />
-                </Grid> */}
+                      <MKInput
+                        variant="standard"
+                        label="Codul postal al vanzatorului (nu este necesar)"
+                        name="sellerPhone"
+                        InputLabelProps={{ shrink: true }}
+                        fullWidth
+                      />
+                    </Grid> */}
+                    <Grid item xs={12} md={6}>
+                      <MKInput
+                        type="email"
+                        variant="standard"
+                        label="Email-ul cumparatorului"
+                        name="sellerEmail"
+                        InputLabelProps={{ shrink: true }}
+                        fullWidth
+                      />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                      <MKInput
+                        variant="standard"
+                        label="Telefonul cumparatorului (nu este necesar)"
+                        name="buyerPhone"
+                        InputLabelProps={{ shrink: true }}
+                        fullWidth
+                      />
+                    </Grid>
+                    {/* <Grid item xs={12} md={6}>
+                      <MKInput
+                        variant="standard"
+                        label="Codul postal al cumparatorului (nu este necesar)"
+                        name="sellerPhone"
+                        InputLabelProps={{ shrink: true }}
+                        fullWidth
+                      />
+                    </Grid> */}
+                    <Grid item xs={12} md={6}>
+                      <MKInput
+                        variant="standard"
+                        label="Numarul de inmatriculare"
+                        name="plateNumber"
+                        InputLabelProps={{ shrink: true }}
+                        fullWidth
+                      />
+                    </Grid>
+                    {/* <Grid item xs={12} md={6}>
+                      <MKInput
+                        variant="standard"
+                        label="Cand expira ITP-ul (nu este necesar)"
+                        name="itpExpire"
+                        InputLabelProps={{ shrink: true }}
+                        fullWidth
+                      />
+                    </Grid> */}
+                    {/* <Grid item xs={12} md={6}>
+                      <MKInput
+                        variant="standard"
+                        label="Cumparat cu? (nu este necesar)"
+                        name="buyedWith"
+                        InputLabelProps={{ shrink: true }}
+                        fullWidth
+                      />
+                    </Grid> */}
+                    {/* <Grid item xs={12} md={6}>
+                      <MKInput
+                        variant="standard"
+                        label="Data dobandirii? (nu este necesar)"
+                        name="buyedAt"
+                        InputLabelProps={{ shrink: true }}
+                        fullWidth
+                      />
+                    </Grid> */}
                     <Grid container item justifyContent="center" xs={12} mt={2} mb={2}>
                       <MKBox width="80%">
                         <MKInput

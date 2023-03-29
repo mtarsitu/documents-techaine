@@ -7,12 +7,29 @@ import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 import DefaultNavbar from "global/navbars/DefaultNavbar";
-
+import axios from "axios";
 import routes from "routes";
 // Image
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
+import logo from "assets/images/logo.png";
+import { useNavigate } from "react-router-dom";
 
 function ContactUs() {
+  const navigate = useNavigate();
+  const upload = async (form) => {
+    try {
+      await axios.post("http://localhost:5204/Email/sendEmail", form);
+      navigate("/");
+    } catch (err) {
+      console.warn(err);
+    }
+  };
+  const setForm = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    formData.append("autoContractLogo", logo);
+    upload(formData);
+  };
   return (
     <>
       <DefaultNavbar
@@ -78,12 +95,19 @@ function ContactUs() {
                 Contactați-ne astăzi pentru a afla mai multe despre cum vă putem ajuta să
                 transformați afacerea dumneavoastră!
               </MKTypography>
-              <MKBox width="100%" component="form" method="post" autocomplete="off">
+              <MKBox
+                width="100%"
+                component="form"
+                method="post"
+                autocomplete="off"
+                onSubmit={setForm}
+              >
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
                     <MKInput
                       variant="standard"
                       label="Cum te numesti?"
+                      name="clientName"
                       InputLabelProps={{ shrink: true }}
                       fullWidth
                     />
@@ -91,8 +115,19 @@ function ContactUs() {
                   <Grid item xs={12} md={6}>
                     <MKInput
                       type="email"
+                      name="clientEmail"
                       variant="standard"
                       label="Email"
+                      InputLabelProps={{ shrink: true }}
+                      fullWidth
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <MKInput
+                      type="text"
+                      name="clientSubject"
+                      variant="standard"
+                      label="Subiect"
                       InputLabelProps={{ shrink: true }}
                       fullWidth
                     />
@@ -100,6 +135,7 @@ function ContactUs() {
                   <Grid item xs={12}>
                     <MKInput
                       variant="standard"
+                      name="clientMessage"
                       label="Cu ce te putem ajuta?"
                       placeholder="Descrie problema ta in cel putin 250 de caractere"
                       InputLabelProps={{ shrink: true }}

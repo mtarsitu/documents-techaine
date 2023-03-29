@@ -24,12 +24,12 @@ import axios from "axios";
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
-function SignInBasic() {
+function Register() {
   const [rememberMe, setRememberMe] = useState(false);
+
   const upload = async (form) => {
     try {
-      const response = await axios.post("http://localhost:5204/Account/login", form);
-      console.log(response);
+      await axios.post("http://localhost:5204/Account/register", form);
     } catch (err) {
       console.warn(err);
     }
@@ -86,7 +86,7 @@ function SignInBasic() {
                 textAlign="center"
               >
                 <MKTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-                  Sign in
+                  Inregistrare
                 </MKTypography>
                 <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
                   <Grid item xs={2}>
@@ -112,7 +112,10 @@ function SignInBasic() {
                     <MKInput type="email" name="email" label="Email" fullWidth />
                   </MKBox>
                   <MKBox mb={2}>
-                    <MKInput type="password" name="password" label="Parola" fullWidth />
+                    <MKInput type="password" name="password" label="Password" fullWidth />
+                  </MKBox>
+                  <MKBox mb={2}>
+                    <MKInput type="password" label="Confirmare Parola" fullWidth />
                   </MKBox>
                   <MKBox display="flex" alignItems="center" ml={-1}>
                     <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -127,22 +130,22 @@ function SignInBasic() {
                     </MKTypography>
                   </MKBox>
                   <MKBox mt={4} mb={1}>
-                    <MKButton variant="gradient" type="submit" color="info" fullWidth>
-                      sign in
+                    <MKButton type="submit" variant="gradient" color="info" fullWidth>
+                      Inregistreaza-te
                     </MKButton>
                   </MKBox>
                   <MKBox mt={3} mb={1} textAlign="center">
                     <MKTypography variant="button" color="text">
-                      Nu ai un cont?{" "}
+                      Ai deja cont?{" "}
                       <MKTypography
                         component={Link}
-                        to="/inregistrare"
+                        to="/sign-in"
                         variant="button"
                         color="info"
                         fontWeight="medium"
                         textGradient
                       >
-                        Inregistrare
+                        Mergi la logare
                       </MKTypography>
                     </MKTypography>
                   </MKBox>
@@ -156,4 +159,4 @@ function SignInBasic() {
   );
 }
 
-export default SignInBasic;
+export default Register;

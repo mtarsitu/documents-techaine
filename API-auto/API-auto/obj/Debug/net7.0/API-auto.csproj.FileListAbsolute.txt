@@ -105,3 +105,7 @@
 /Users/m.t./Documents/documents-techaine/API-auto/API-auto/obj/Debug/net7.0/API-auto.pdb
 /Users/m.t./Documents/documents-techaine/API-auto/API-auto/obj/Debug/net7.0/API-auto.genruntimeconfig.cache
 /Users/m.t./Documents/documents-techaine/API-auto/API-auto/obj/Debug/net7.0/ref/API-auto.dll
+/Users/m.t./Documents/documents-techaine/API-auto/API-auto/bin/Debug/net7.0/MobilpayEncryptDecrypt.dll
+/Users/m.t./Documents/documents-techaine/API-auto/API-auto/bin/Debug/net7.0/MailKit.dll
+/Users/m.t./Documents/documents-techaine/API-auto/API-auto/bin/Debug/net7.0/MimeKit.dll
+/Users/m.t./Documents/documents-techaine/API-auto/API-auto/bin/Debug/net7.0/NETCore.MailKit.dll

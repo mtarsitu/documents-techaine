@@ -6,7 +6,7 @@ namespace API_auto.mappers
 {
     public static class IdMapper
     {
-        public static DocumentId GetClientData(AnalyzeResult result, ClientType clientType)
+        public static DocumentId GetClientData(AnalyzeResult result, ClientType clientType, string phone, string email)
         {
             DocumentId client = new DocumentId();
             string fullName = "";
@@ -41,8 +41,8 @@ namespace API_auto.mappers
                 else if(field.Key == "Apartament"){client.apartament= field.Value.Content == null ? new Apartament("-",clientType,0.8f): new Apartament(TextHelper.WithoutDiacritics(field.Value.Content),clientType,(float)field.Value.Confidence);}
             }
             client.postalCode = new PostalCode("-",clientType,0.6f);
-            client.email = new Email("-",clientType,0.6f);
-            client.phoneNumber = new PhoneNumber("-",clientType,0.6f);
+            client.email = new Email(email !=  null ? email : "-",clientType,0.6f);
+            client.phoneNumber = new PhoneNumber(phone != null ? phone : "-",clientType,0.6f);
             client.fullName = new FullName(fullName,clientType,conf/2);
             return client;
         }

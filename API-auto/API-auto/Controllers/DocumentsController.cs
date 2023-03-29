@@ -5,7 +5,7 @@ using API_auto.model;
 using API_auto.model.id;
 using API_auto.helpers;
 using API_auto.mappers;
-
+using API_auto.DTO;
 namespace API_auto.Controllers
 {
     [ApiController]
@@ -24,11 +24,11 @@ namespace API_auto.Controllers
 
 
         [HttpPost("getResult")]
-        public async Task<OutDocuments> GetResult([FromForm] IncomingImages file)
+        public async Task<OutDocuments> GetResult([FromForm] IncomingData file)
         {
-            var sellerResultTask = _service.GetOcrDocument(file.SellerId, ClientType.Seller);
-            var buyerResultTask = _service.GetOcrDocument(file.BuyerId, ClientType.Buyer);
-            var autoResultTask = _autoService.GetOcrAutoDocument(file.AutoId,file.Price);
+            var sellerResultTask = _service.GetOcrDocument(file.SellerId, ClientType.Seller,file.SellerPhone, file.SellerEmail);
+            var buyerResultTask = _service.GetOcrDocument(file.BuyerId, ClientType.Buyer, file.BuyerPhone,file.BuyerEmail);
+            var autoResultTask = _autoService.GetOcrAutoDocument(file.AutoId,file.Price, file.PlateNumber);
             // List<DocumentId> idDates = new List<DocumentId>{sellerResult};
             var (sellerResult,buyerResult,autoResult)
              = await TaskExtensionsHelper.WhenAll(sellerResultTask, buyerResultTask,autoResultTask);
@@ -42,8 +42,8 @@ namespace API_auto.Controllers
             return outData;
         }
 
-        [HttpPost("test")]
-        public OutDocuments GetTestResult([FromForm] IncomingImages file)
+        [HttpPost("manualInput")]
+        public OutDocuments ManualInput([FromForm] IncomingData file)
         {
             DocumentId seller = IdMock.GetSeller(file);
             DocumentId buyer = IdMock.GetBuyer(file);
@@ -65,10 +65,5 @@ namespace API_auto.Controllers
             return PdfHelper.GetPdfBytes();
         }
 
-        [HttpPost("paymentTest")]
-        public void PaymentTest([FromForm]Payment payment)
-        {
-            _Default.btnPay_Click(payment);
-        }
     }
 }

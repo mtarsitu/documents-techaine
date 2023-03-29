@@ -7,7 +7,7 @@ namespace API_auto.mappers
 {
     public static class AutoMapper
     {
-        public static AutoId GetAutoData(AnalyzeResult result, double price)
+        public static AutoId GetAutoData(AnalyzeResult result, double price, string plateNumber)
         {
             AutoId autoId = new AutoId();
             foreach(System.Collections.Generic.KeyValuePair<string, DocumentField> field in result.Documents[0].Fields)
@@ -23,7 +23,7 @@ namespace API_auto.mappers
             autoId.price = new Price(price.ToString(),0.8f);
             autoId.letterPrice = new LetterPrice(PriceHelper.ConversieNumarIntreg((int)price),0.8f);
             autoId.autoCardId = new AutoCardId("-",0.6f);
-            autoId.plateNumber = new PlateNumber("-",0.6f);
+            autoId.plateNumber = new PlateNumber(plateNumber != null ? plateNumber : "-",0.6f);
             autoId.itpExpire = new ItpExpire("-",0.6f);
             autoId.buyedAt = new BuyedAt("-",0.6f);
             autoId.buyedWith = new BuyedWith("-",0.6f);

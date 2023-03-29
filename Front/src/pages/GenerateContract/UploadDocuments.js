@@ -88,12 +88,13 @@ const UploadDocuments = () => {
           >
             <MKTypography variant="h3" mb={4}>
               Primul pas - Incarcare pozele domentelor. Poti incarca poze existente sau poti face o
-              poza noua chiar acum
+              poza noua chiar acum.
             </MKTypography>
             <MKTypography variant="h6" mb={4}>
-              Asigura-te ca tu poti citii datele din pozele pe care le trimiti, daca tu poti si noi
-              putem sa o facem. Doar poze sunt acceptate momentan. Nu putem lucra cu pdf. Incarca
-              pozele mai jos!
+              Documentele nu trebuie incadrate perfect in poza, si nici sa fie drepte! Asigura-te ca
+              tu poti citii datele din pozele pe care le trimiti, daca tu poti si noi putem sa o
+              facem. Doar poze sunt acceptate momentan. Nu putem lucra cu pdf. Incarca pozele mai
+              jos!
             </MKTypography>
             <Grid container spacing={3} mt={4} ml="auto">
               <Grid item xs={12} lg={5} sx={{ mt: { xs: 3, lg: 0 } }}>

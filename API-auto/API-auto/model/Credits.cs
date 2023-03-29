@@ -2,6 +2,7 @@ namespace API_auto.model
 {
     public class Credits
     {
+        public int Id {get;set;}
         public string? UserId {get;set;}
         public int Amount {get;set;}
         public DateTime CreatedAt = DateTime.UtcNow;
