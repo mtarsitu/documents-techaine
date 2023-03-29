@@ -44,7 +44,7 @@ function CompletedDoc({ seller, buyer, auto, setSeller, setBuyer, setAuto, step,
     );
 
     try {
-      const response = await axios.post("http://localhost:5204/Email/sendPdfEmail", formData);
+      const response = await axios.post("https://autocontract.azurewebsites.net/Email/sendPdfEmail", formData);
       console.log(response);
     } catch (err) {
       console.warn(err);
