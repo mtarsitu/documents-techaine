@@ -94,6 +94,41 @@ function Footer() {
                   fontWeight="regular"
                   opacity={0.8}
                   component={Link}
+                  href="/politica-cookie"
+                >
+                  Cookie
+                </MKTypography>
+              </MKBox>
+              <MKBox component="li">
+                <MKTypography
+                  variant="button"
+                  fontWeight="regular"
+                  opacity={0.8}
+                  component={Link}
+                  href="/politica-confidentialitate-gdpr"
+                >
+                  GDPR
+                </MKTypography>
+              </MKBox>
+              <MKBox component="li">
+                <MKTypography
+                  variant="button"
+                  fontWeight="regular"
+                  opacity={0.8}
+                  component={Link}
+                  href="/termeni-si-conditii"
+                >
+                  Termeni si conditii
+                </MKTypography>
+              </MKBox>
+              <MKBox component="li">
+                <MKTypography
+                  variant="button"
+                  fontWeight="regular"
+                  opacity={0.8}
+                  component={Link}
+                  target="_blank"
+                  rel="noreferrer"
                   href="https://anpc.ro/"
                 >
                   ANPC
@@ -105,6 +140,8 @@ function Footer() {
                   fontWeight="regular"
                   opacity={0.8}
                   component={Link}
+                  target="_blank"
+                  rel="noreferrer"
                   href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO"
                 >
                   SOL
