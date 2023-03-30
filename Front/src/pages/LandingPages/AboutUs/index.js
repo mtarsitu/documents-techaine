@@ -64,19 +64,31 @@ function AboutUs() {
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
                   fontSize: size["3xl"],
+                  mt: 6,
                 },
               })}
             >
-              Despre noi - Auto Generare Contracte
+              Despre noi - Autocontract.ro
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              Bun venit pe AutoContracte.ro, compania de tehnologie ce oferă soluții avansate pentru
-              completarea automată a contractelor de vânzare auto și nu numai.
+              Compania de tehnologie ce oferă soluții avansate pentru completarea automată a
+              contractelor de vânzare auto și nu numai.
               <br />
               Putem spune ca suntem o companie care cauta mereu solutii inovatoare pentru a livra
               functionalitati ce sunt folosite zi de zi
             </MKTypography>
-            <MKTypography variant="h6" color="white" mt={8} mb={1}>
+            <MKTypography
+              variant="h6"
+              color="white"
+              mt={8}
+              mb={1}
+              sx={({ breakpoints, typography: { size } }) => ({
+                [breakpoints.down("md")]: {
+                  fontSize: size[0.5],
+                  mt: -2,
+                },
+              })}
+            >
               Ne poti gasii si pe
             </MKTypography>
             <MKBox display="flex" justifyContent="center" alignItems="center">

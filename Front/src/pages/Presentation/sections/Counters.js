@@ -40,7 +40,8 @@ function Counters() {
               description="Contract vanzare cumparare auto pe care îl veți primi de la autoContract.ro este un document recunoscut oficial atât de Primărie, cât și de Poliția Rutieră și Direcția Regim Permise de Conducere și Înmatriculare a Vehiculelor (DRPCIV)."
             />
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={3} display="flex">
+            <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, mx: 0 }} />
             <DefaultCounterCard
               count={100}
               suffix="%"

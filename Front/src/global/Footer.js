@@ -112,17 +112,17 @@ function Footer() {
               </MKBox>
             </Stack>
             <MKTypography variant="button" opacity={0.8}>
-              Copyright ©{year} &nbsp;Auto-Completare-Contracte
+              Copyright ©{year} &nbsp;AutoContract.ro
             </MKTypography>
           </Grid>
           <Grid item xs={12} lg={6} ml="auto" textAlign={{ xs: "center", lg: "right" }}>
             <MKTypography variant="body1" fontWeight="bold" mb={6} sx={{ fontSize: "1.125rem" }}>
-              Timpul este important. Noi respectam asta, si cautam solutii pentru a castiga cat mai
-              mult timp posibil.
+              Contract de vanzare cumparare auto si nu numai completat inteligent. Oferim solutii
+              pentru autocompletare contracte
             </MKTypography>
             <MKTypography
               component={Link}
-              href="#dribbble"
+              href="https://www.facebook.com/autocontract.ro"
               target="_blank"
               rel="noreferrer"
               variant="body2"
@@ -130,11 +130,11 @@ function Footer() {
               opacity={0.5}
               mr={3}
             >
-              <i className="fab fa-dribbble" />
+              <i className="fab fa-facebook" />
             </MKTypography>
             <MKTypography
               component={Link}
-              href="#twitter"
+              href="https://www.instagram.com/autocontract.ro/"
               target="_blank"
               rel="noreferrer"
               variant="body2"
@@ -142,11 +142,11 @@ function Footer() {
               opacity={0.5}
               mr={3}
             >
-              <i className="fab fa-twitter" />
+              <i className="fab fa-instagram" />
             </MKTypography>
             <MKTypography
               component={Link}
-              href="#pinterest"
+              href="#tiktok"
               target="_blank"
               rel="noreferrer"
               variant="body2"
@@ -154,18 +154,7 @@ function Footer() {
               opacity={0.5}
               mr={3}
             >
-              <i className="fab fa-pinterest" />
-            </MKTypography>
-            <MKTypography
-              component={Link}
-              href="#github"
-              target="_blank"
-              rel="noreferrer"
-              variant="body2"
-              color="dark"
-              opacity={0.5}
-            >
-              <i className="fab fa-github" />
+              <i className="fab fa-tiktok" />
             </MKTypography>
           </Grid>
         </Grid>

@@ -60,19 +60,21 @@ function Presentation() {
           }}
         />
         <Container>
-          <Grid container item xs={12} lg={9} justifyContent="center" mx="auto">
+          <Grid container item xs={12} lg={14} justifyContent="center" mx="auto">
             <MKTypography
               variant="h1"
               color="white"
+              textAlign="center"
               mt={-6}
               mb={1}
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
-                  fontSize: size[1],
+                  fontSize: size[0.5],
+                  mt: 2,
                 },
               })}
             >
-              Contract vanzare-cumparare auto
+              Contract vanzare-cumparare auto automatizat
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -81,10 +83,8 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Bună ziua și bun venit pe autocontract.ro, unde ne specializăm în completarea automată
-              a contractului de vânzare cumparare auto. Acum puteți evita orele lungi petrecute
-              completând manual contracte, utilizând serviciul nostru ușor și rapid de completare
-              automată a contractelor.
+              OCR-izare (recunoastere text din poza) pentru completare automata a contractului de
+              vanzare cumparare auto.
             </MKTypography>
           </Grid>
         </Container>
@@ -109,7 +109,8 @@ function Presentation() {
             <Grid container spacing={3}>
               <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: "center", lg: "left" } }}>
                 <MKTypography variant="h4" fontWeight="bold" mb={0.5}>
-                  Daca vrei sa afle si prietenii tai!
+                  Daca vrei sa afle si prietenii tai despre contracul de vanzare cumparare auto
+                  auto-completat!
                 </MKTypography>
                 <MKTypography variant="body1" color="text">
                   Noi livram doar servicii de calitate!
@@ -135,7 +136,7 @@ function Presentation() {
                 </MKSocialButton>
                 <MKSocialButton
                   component="a"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-kit-react"
+                  href="https://www.facebook.com/sharer/sharer.php?u=https://autocontract.ro"
                   target="_blank"
                   color="facebook"
                   sx={{ mr: 1 }}
@@ -143,14 +144,9 @@ function Presentation() {
                   <i className="fab fa-facebook" />
                   &nbsp;Share
                 </MKSocialButton>
-                <MKSocialButton
-                  component="a"
-                  href="https://www.pinterest.com/pin/create/button/?url=https://www.creative-tim.com/product/material-kit-react"
-                  target="_blank"
-                  color="pinterest"
-                >
-                  <i className="fab fa-pinterest" />
-                  &nbsp;Pin it
+                <MKSocialButton component="a" href="tiktok#" target="_blank" color="tiktok">
+                  <i className="fab fa-tiktok" />
+                  &nbsp;Tok it
                 </MKSocialButton>
               </Grid>
             </Grid>
