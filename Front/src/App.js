@@ -12,6 +12,9 @@ import theme from "assets/theme";
 import PresentationPage from "layouts/pages/presentation";
 import UploadDocumentsPages from "layouts/pages/upload";
 import RegisterPage from "layouts/pages/authentication/register";
+import CookiesPage from "layouts/pages/authorities/cookie";
+import TermsPage from "layouts/pages/authorities/terms";
+import GdpPage from "layouts/pages/authorities/gdpr";
 import Footer from "global/Footer";
 // Material Kit 2 React routes
 import routes from "routes";
@@ -48,6 +51,9 @@ export default function App() {
         <Route path="/contract" element={<UploadDocumentsPages />} />
         <Route path="/cumpara-pachete" />
         <Route path="/inregistrare" element={<RegisterPage />} />
+        <Route path="/politica-cookie" element={<CookiesPage />} />
+        <Route path="/politica-confidentialitate-gdpr" element={<GdpPage />} />
+        <Route path="/termeni-si-conditii" element={<TermsPage />} />
       </Routes>
       <Footer />
     </ThemeProvider>
