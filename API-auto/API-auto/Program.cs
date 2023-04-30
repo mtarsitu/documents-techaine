@@ -5,6 +5,7 @@ using API_auto.services;
 using API_auto.model;
 using Microsoft.OpenApi.Models;
 using API_auto.Services;
+using API_auto;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -19,18 +20,21 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddCors(cors => {
+
+builder.Services.AddCors(cors =>
+{
     cors.AddPolicy(name: MyAllowSpecificOrigins, policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "https://vidivici-frontend.azurewebsites.net/","http://localhost:3001").AllowCredentials().AllowAnyHeader().AllowAnyMethod();
+        policy.WithOrigins("http://localhost:3000", "https://vidivici-frontend.azurewebsites.net/", "http://localhost:3001").AllowCredentials().AllowAnyHeader().AllowAnyMethod();
     });
 
 
 });
+builder.Services.AddStripeInfrastructure(builder.Configuration);
 builder.Services.AddDbContext<AutoDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-    
+
 });
 builder.Services.AddIdentityCore<User>().AddRoles<IdentityRole>().AddSignInManager().AddEntityFrameworkStores<AutoDbContext>();
 builder.Services.AddAuthentication();
@@ -81,12 +85,12 @@ app.UseSwaggerUI();
 app.UseHttpsRedirection();
 app.UseCors(opt =>
 {
-    opt.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://localhost:3000", "https://vidivici-frontend.azurewebsites.net/") ;
+    opt.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://localhost:3000", "https://vidivici-frontend.azurewebsites.net/");
 });
 app.UseAuthorization();
 
 app.MapControllers();
-System.Diagnostics.Trace.TraceInformation("Service started now"+ DateTime.Now.ToString());
+System.Diagnostics.Trace.TraceInformation("Service started now" + DateTime.Now.ToString());
 using var scope = app.Services.CreateScope();
 var context = scope.ServiceProvider.GetRequiredService<AutoDbContext>();
 var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
@@ -96,7 +100,7 @@ try
 {
     context.Database.Migrate();
 }
-catch(Exception ex)
+catch (Exception ex)
 {
     logger.LogError(ex, "Problem migrating data");
 }

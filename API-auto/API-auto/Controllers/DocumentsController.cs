@@ -48,13 +48,13 @@ namespace API_auto.Controllers
             DocumentId seller = IdMock.GetSeller(file);
             DocumentId buyer = IdMock.GetBuyer(file);
             AutoId auto = IdMock.GetAuto(file); 
-           
 
             OutDocuments outDocuments = new OutDocuments{
                 Seller = seller,
                 Buyer = buyer,
                 Auto = auto
             };
+            
             return outDocuments;
         }
 

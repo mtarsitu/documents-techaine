@@ -10,7 +10,7 @@ namespace API_auto.helpers
         public static string GetPdfBytes()
         {
             // D:\\home\\site\\wwwroot\\app_data\\ deployment
-            byte[] bytes = File.ReadAllBytes("D:\\home\\site\\wwwroot\\app_data\\vanzare-cumparare.pdf");
+            byte[] bytes = File.ReadAllBytes("vanzare-cumparare.pdf");
             string file = Convert.ToBase64String(bytes);
             return file;
         }

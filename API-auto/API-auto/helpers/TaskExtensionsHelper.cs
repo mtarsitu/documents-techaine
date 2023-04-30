@@ -12,12 +12,12 @@ namespace API_auto.helpers
             var allTasks = Task.WhenAll(task1, task2, task3);
             try
             {
-            await allTasks;
+                await allTasks;
             }
             catch (Exception exp)
             {
-            Console.WriteLine("Task Exception", exp);
-            throw allTasks.Exception;
+                Console.WriteLine("Task Exception", exp);
+                throw allTasks.Exception;
             }
             return (task1.Result, task2.Result, task3.Result);
         }
