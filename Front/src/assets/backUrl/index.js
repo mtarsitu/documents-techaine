@@ -1,2 +1,2 @@
-const backUrl = "http://localhost:5204/";
+const backUrl = "https://autocontract.azurewebsites.net/";
 export default backUrl;
