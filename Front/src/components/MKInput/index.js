@@ -21,8 +21,8 @@ import PropTypes from "prop-types";
 // Custom styles for MKInput
 import MKInputRoot from "components/MKInput/MKInputRoot";
 
-const MKInput = forwardRef(({ error, success, disabled, ...rest }, ref) => (
-  <MKInputRoot {...rest} ref={ref} ownerState={{ error, success, disabled }} />
+const MKInput = forwardRef(({ error, success, disabled, warning, ...rest }, ref) => (
+  <MKInputRoot {...rest} ref={ref} ownerState={{ error, success, disabled, warning }} />
 ));
 
 // Setting default values for the props of MKInput
@@ -30,6 +30,7 @@ MKInput.defaultProps = {
   error: false,
   success: false,
   disabled: false,
+  warning: false,
 };
 
 // Typechecking props for the MKInput
@@ -37,6 +38,7 @@ MKInput.propTypes = {
   error: PropTypes.bool,
   success: PropTypes.bool,
   disabled: PropTypes.bool,
+  warning: PropTypes.bool,
 };
 
 export default MKInput;
