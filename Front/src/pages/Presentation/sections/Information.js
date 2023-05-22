@@ -59,7 +59,7 @@ function Information() {
                 <DefaultInfoCard
                   icon="price_change"
                   title="Achiti"
-                  description="Achiti taxa de numai 17.99 ron si in cateva secunde contractul este generat automat. Urmand sa alegi ce sa faci in continuare: editezi, email, printare sau descarcare?"
+                  description="Achiti taxa de numai 17.99 ron si in cateva secunde contractul este generat automat. Urmand sa alegi ce sa faci in continuare: editezi, email, printezi sau descarci?"
                 />
               </Grid>
             </Grid>

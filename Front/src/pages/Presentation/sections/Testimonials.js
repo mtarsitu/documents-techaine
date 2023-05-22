@@ -51,7 +51,7 @@ function Information() {
               color="info"
               name="Stefan Toader"
               date="1 week ago"
-              review="Am gasit acest serviciu pentru parcul pe care il conduc si de atunci orice contract este emis prin aceast site"
+              review="Am gasit acest serviciu pentru parcul pe care il conduc si de atunci orice contract este emis prin acest site"
               rating={5}
             />
           </Grid>
