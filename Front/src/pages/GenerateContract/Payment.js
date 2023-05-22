@@ -24,7 +24,7 @@ function Payment({ setWaterMarked, setPaymentPage }) {
           receiptEmail: response.data.email,
           description: "AutoCompletare contract de vanzare-cumparare auto!",
           currency: "RON",
-          amount: 2799,
+          amount: 1799,
         });
         if (paymentResponse.status === 200) {
           setWaterMarked(false);

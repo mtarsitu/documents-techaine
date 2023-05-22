@@ -17,7 +17,7 @@ namespace API_auto.Controllers
         [HttpPost("create")]
         public ActionResult Create()
         {
-            var domain = "http://localhost:3000";
+            var domain = "http://autocontract.ro";
             var options = new SessionCreateOptions
             {
                 LineItems = new List<SessionLineItemOptions>

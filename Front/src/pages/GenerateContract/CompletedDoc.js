@@ -141,7 +141,7 @@ function CompletedDoc({
                             onClick={() => setPaymentPage(true)}
                             disabled={!waterMarked}
                           >
-                            Achita 27.99 ron!
+                            Achita 17.99 ron!
                           </MKButton>
                         </Grid>
                       )}
