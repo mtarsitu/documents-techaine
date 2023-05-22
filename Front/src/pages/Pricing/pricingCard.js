@@ -57,7 +57,7 @@ function PricingCard({ variant, color, price, icon, title, description, action }
           fontWeight="bold"
           mb={1}
         >
-          {`${price} euro/luna`}
+          {title === "Personal"? `${price} ron/contract` :`${price} euro/luna`}
           <br />
         </MKTypography>
         {description.map((item) => (

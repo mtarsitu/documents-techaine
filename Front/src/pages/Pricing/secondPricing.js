@@ -19,7 +19,7 @@ import PricingCard from "./pricingCard";
 const tiers = [
   {
     title: "Personal",
-    price: "3.90",
+    price: "17.99",
     description: [
       "1 Contract autocompletat",
       "Scanare buletine vanzator si cumparator",
