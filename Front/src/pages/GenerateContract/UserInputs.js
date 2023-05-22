@@ -13,6 +13,9 @@ import bgImage from "assets/images/generare-contract.jpeg";
 import backUrl from "assets/backUrl";
 import LoadingSpinner from "components/Spinner/spinner";
 import CompletedDoc from "./CompletedDoc";
+import { manualInputs } from "./data/inputsData";
+import SelectPicker from "./selectPicker";
+
 // https://autocontract.azurewebsites.net/
 function UserInputs({ files, setStep, step }) {
   const [seller, setSeller] = useState({});
@@ -22,18 +25,31 @@ function UserInputs({ files, setStep, step }) {
     sellerSignature: null,
     buyerSignature: null,
   });
+  const [disabled, setDisabled] = useState(true);
   const signWidth = window.innerWidth > 400 ? 0.25 * window.innerWidth : 0.7 * window.innerWidth;
   const [sellerSigPad, setSellerSigpad] = useState({});
   const [buyerSigPad, setBuyerSigpad] = useState({});
   const [loading, setLoading] = useState(false);
-
+  const [inputs, setInputs] = useState({
+    sellerEmail: "",
+    sellerPhone: "",
+    buyerEmail: "",
+    buyerPhone: "",
+    price: "",
+    coin: "RON",
+  });
   const onChange = (e) => {
-    console.log(e.target.name);
-    console.log(e.target.value);
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
   };
-  // reliableby  / admin
-  // admin
-  // Muie11muie???
+
+  const checkDisabled = () => {
+    if (inputs.price.match(manualInputs[5].regex)) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  };
+  console.log(inputs);
   const upload = async (form) => {
     try {
       setLoading(true);
@@ -64,10 +80,15 @@ function UserInputs({ files, setStep, step }) {
     formData.append("autoId", files.autoCard[0]);
     upload(formData);
   };
-
+  useEffect(() => {
+    checkDisabled();
+  }, [inputs]);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [loading]);
   return (
     <>
       {step === 2 ? (
@@ -201,8 +222,9 @@ function UserInputs({ files, setStep, step }) {
                         fullWidth
                       />
                     </Grid> */}
-                    <Grid container item justifyContent="center" xs={12} mt={2} mb={2}>
-                      <MKBox width="80%">
+
+                    <Grid container item justifyContent="center" xs={12} mt={0} mb={2}>
+                      <MKBox width="50%">
                         <MKInput
                           color="info"
                           type="text"
@@ -212,8 +234,12 @@ function UserInputs({ files, setStep, step }) {
                           InputLabelProps={{ shrink: true }}
                           onChange={onChange}
                           fullWidth
+                          error={!inputs.price.match(manualInputs[5].regex)}
                         />
                       </MKBox>
+                    </Grid>
+                    <Grid container item justifyContent="center" xs={12} mt={0} mb={0}>
+                      <SelectPicker inputs={inputs} setInputs={setInputs} />
                     </Grid>
                   </Grid>
                   <Grid container justifyContent="center" xs={12} mt={2} mb={2}>
@@ -281,7 +307,7 @@ function UserInputs({ files, setStep, step }) {
                     mt={5}
                     mb={2}
                   >
-                    <MKButton type="submit" variant="gradient" color="info">
+                    <MKButton type="submit" variant="gradient" color="info" disabled={disabled}>
                       Urmatorul pas
                     </MKButton>
                   </Grid>
@@ -304,6 +330,7 @@ function UserInputs({ files, setStep, step }) {
           step={step}
           setStep={setStep}
           signatures={signatures}
+          coin={inputs.coin}
         />
       )}
     </>

@@ -18,7 +18,6 @@ function Payment({ setWaterMarked, setPaymentPage }) {
     setLoading(true);
     try {
       const response = await axios.post(`${backUrl}Stripe/customer/add`, form);
-      console.log(response);
       if (response.status === 200) {
         const paymentResponse = await axios.post(`${backUrl}Stripe/payment/add`, {
           customerId: response.data.customerId,
@@ -36,7 +35,7 @@ function Payment({ setWaterMarked, setPaymentPage }) {
     } catch (error) {
       setLoading(false);
       setAlerts(true);
-      setAlertsMessage("O eroare!");
+      setAlertsMessage("O eroare a aparut te rugam sa incerci din nou!");
     }
   };
   const setForm = (e) => {

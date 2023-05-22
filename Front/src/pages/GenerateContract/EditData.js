@@ -9,6 +9,7 @@ import MKTypography from "components/MKTypography";
 import DefaultNavbar from "global/navbars/DefaultNavbar";
 import routes from "routes";
 import bgImage from "assets/images/generare-contract.jpeg";
+import { useEffect } from "react";
 import EditedCompletedDoc from "./EditedCompletedDoc";
 
 function EditData({
@@ -21,6 +22,7 @@ function EditData({
   step,
   setStep,
   signatures,
+  coin,
 }) {
   const buyerId = buyer.id;
   const sellerId = seller.id;
@@ -38,6 +40,9 @@ function EditData({
   const handleSubmit = () => {
     setStep(step + 1);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <DefaultNavbar
@@ -175,7 +180,13 @@ function EditData({
           </Card>
         </MKBox>
       ) : (
-        <EditedCompletedDoc seller={seller} buyer={buyer} auto={auto} signatures={signatures} />
+        <EditedCompletedDoc
+          seller={seller}
+          buyer={buyer}
+          auto={auto}
+          signatures={signatures}
+          coin={coin}
+        />
       )}
     </>
   );
@@ -191,6 +202,7 @@ EditData.propTypes = {
   step: PropTypes.number.isRequired,
   setStep: PropTypes.func.isRequired,
   signatures: PropTypes.object.isRequired,
+  coin: PropTypes.string.isRequired,
 };
 
 export default EditData;

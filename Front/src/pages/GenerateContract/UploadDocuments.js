@@ -14,7 +14,7 @@ import routes from "routes";
 import UserInputs from "./UserInputs";
 
 const UploadDocuments = () => {
-  const [fullUploaded, setFullUploaded] = useState(true);
+  const [fullUploaded, setFullUploaded] = useState(false);
   const [files, setFiles] = useState({
     sellerCard: "",
     buyerCard: "",
@@ -43,19 +43,20 @@ const UploadDocuments = () => {
       autoCard: file,
     }));
   };
-  console.log(fullUploaded);
   useEffect(() => {
-    console.log(files.sellerCard, "aici");
     if (
       files.sellerCard.length === 0 ||
       files.buyerCard.length === 0 ||
       files.autoCard.length === 0
     ) {
-      setFullUploaded(true);
+      setFullUploaded(false);
     } else {
       setFullUploaded(true);
     }
   }, [files]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <DefaultNavbar

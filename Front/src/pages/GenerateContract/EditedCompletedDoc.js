@@ -16,7 +16,7 @@ import { ToBase64 } from "./pdfHelpers";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-function EditedCompletedDoc({ seller, buyer, auto, signatures }) {
+function EditedCompletedDoc({ seller, buyer, auto, signatures, coin }) {
   const [pdfBytes, setPdfBytes] = useState();
   const [base64PDF, setBase64Pdf] = useState();
   const handlePrint = () => {
@@ -39,7 +39,7 @@ function EditedCompletedDoc({ seller, buyer, auto, signatures }) {
     );
 
     try {
-      const response = await axios.post("https://autocontract.azurewebsites.net/Email/sendPdfEmail", formData);
+      const response = await axios.post("http://localhost:5204/Email/sendPdfEmail", formData);
       console.log(response);
     } catch (err) {
       console.warn(err);
@@ -47,7 +47,7 @@ function EditedCompletedDoc({ seller, buyer, auto, signatures }) {
   };
 
   useEffect(() => {
-    GetContractCompleted(seller, buyer, auto, signatures).then((result) => {
+    GetContractCompleted(seller, buyer, auto, signatures, coin).then((result) => {
       setPdfBytes(result.final);
       ToBase64(result.final).then((response) => {
         setBase64Pdf(`data:application/pdf;base64,${response}`);
@@ -154,6 +154,7 @@ EditedCompletedDoc.propTypes = {
   seller: PropTypes.object.isRequired,
   auto: PropTypes.object.isRequired,
   signatures: PropTypes.object.isRequired,
+  coin: PropTypes.string.isRequired,
 };
 
 export default EditedCompletedDoc;

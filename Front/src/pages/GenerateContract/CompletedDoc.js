@@ -29,6 +29,7 @@ function CompletedDoc({
   step,
   setStep,
   signatures,
+  coin,
 }) {
   const [pdfBytes, setPdfBytes] = useState();
   const [base64PDF, setBase64Pdf] = useState();
@@ -69,7 +70,7 @@ function CompletedDoc({
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    GetContractCompleted(seller, buyer, auto, signatures).then((result) => {
+    GetContractCompleted(seller, buyer, auto, signatures, coin).then((result) => {
       console.log(result);
       setPdfBytes(waterMarked ? result.watermarked : result.final);
       // setEmailPdf(Array.from(result));
@@ -220,6 +221,7 @@ function CompletedDoc({
           step={step}
           setStep={setStep}
           signatures={signatures}
+          coin={coin}
         />
       )}
     </>
@@ -236,6 +238,7 @@ CompletedDoc.propTypes = {
   setStep: PropTypes.func.isRequired,
   step: PropTypes.number.isRequired,
   signatures: PropTypes.object.isRequired,
+  coin: PropTypes.string.isRequired,
 };
 
 export default CompletedDoc;

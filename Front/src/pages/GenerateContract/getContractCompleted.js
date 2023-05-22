@@ -9,7 +9,7 @@ const month = date.getMonth() + 1;
 const year = date.getFullYear();
 const currentDate = `${day}/${month}/${year}`;
 // https://autocontract.azurewebsites.net/
-export default async function GetContractCompleted(seller, buyer, auto, signatures) {
+export default async function GetContractCompleted(seller, buyer, auto, signatures, coin) {
   const response = await axios.get(`${backUrl}Documents/getPdf`);
   const document = Base64ToArrayBuffer(response.data);
   const pdfDoc = await PDFDocument.load(document);
@@ -44,13 +44,18 @@ export default async function GetContractCompleted(seller, buyer, auto, signatur
   Object.entries(auto).map(
     (detail) =>
       detail[1].value !== undefined &&
-      firstPage.drawText(detail[1].value, {
-        x: detail[1].xPosition,
-        y: detail[1].yPosition,
-        size: detail[0] === "letterPrice" ? 6 : 10,
-        font: customFont,
-        color: rgb(0, 0, 0),
-      }) &&
+      firstPage.drawText(
+        detail[0] === "price" || detail[0] === "letterPrice"
+          ? detail[1].value + coin
+          : detail[1].value,
+        {
+          x: detail[1].xPosition,
+          y: detail[1].yPosition,
+          size: detail[0] === "letterPrice" || detail[0] === "model" ? 7 : 10,
+          font: customFont,
+          color: rgb(0, 0, 0),
+        }
+      ) &&
       console.log(detail)
   );
   Object.entries(buyer).map(
