@@ -50,7 +50,7 @@ function Footer() {
                   fontWeight="regular"
                   opacity={0.8}
                   component={Link}
-                  href="/"
+                  href="/#"
                 >
                   Home
                 </MKTypography>
